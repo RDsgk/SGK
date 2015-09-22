@@ -1,0 +1,81 @@
+
+  graph networkmap{
+    labeljust=l; margin=0; ratio=fill;root=0;size="8,6";bgcolor="none";
+      100 [ color="#364D1F", fontsize=12, style="filled", fixedsize=true, width=0.8, height=0.6, label=<<TABLE BORDER="0"><TR><TD><IMG SRC="../static/images/system.png"/></TD></TR><TR><TD BGCOLOR="#FFFFFF">Acfg POOL</TD></TR></TABLE>>,shape="ellipse", URL="#", tooltip="Acfg POOL" ];
+      200 [ color="#364D1F", fontsize=12, style="filled", fixedsize=true, width=0.8, height=0.6, label=<<TABLE BORDER="0"><TR><TD><IMG SRC="../static/images/system.png"/></TD></TR><TR><TD BGCOLOR="#FFFFFF">Static POOL</TD></TR></TABLE>>,shape="ellipse", URL="#", tooltip="Static POOL" ];
+      300 [ color="#364D1F", fontsize=12, style="filled", fixedsize=true, width=0.8, height=0.6, label=<<TABLE BORDER="0"><TR><TD><IMG SRC="../static/images/system.png"/></TD></TR><TR><TD BGCOLOR="#FFFFFF">Lifad POOL</TD></TR></TABLE>>,shape="ellipse", URL="#", tooltip="Lifad POOL" ];
+      400 [ color="#364D1F", fontsize=12, style="filled", fixedsize=true, width=0.8, height=0.6, label=<<TABLE BORDER="0"><TR><TD><IMG SRC="../static/images/system.png"/></TD></TR><TR><TD BGCOLOR="#FFFFFF">TaintChaser POOL</TD></TR></TABLE>>,shape="ellipse", URL="#", tooltip="TaintChaser POOL" ];
+
+    
+        101 [ color="#8DFF1D", fontsize=12, style="filled", fixedsize=true, width=0.5, height=0.5, label=<<TABLE BORDER="0"><TR><TD><IMG SRC="../static/images/vm_run.png"/></TD></TR><TR><TD BGCOLOR="#FFFFFF">172.20.10.49</TD></TR></TABLE>>,shape="ellipse", URL="#", tooltip="Acfg 172.20.10.49" ];
+        
+        
+ 100 -- 101 [color="#006400", headclip=false, tailclip=false];
+
+        
+        102 [ color="#8DFF1D", fontsize=12, style="filled", fixedsize=true, width=0.5, height=0.5, label=<<TABLE BORDER="0"><TR><TD><IMG SRC="../static/images/vm_run.png"/></TD></TR><TR><TD BGCOLOR="#FFFFFF">172.20.10.48</TD></TR></TABLE>>,shape="ellipse", URL="#", tooltip="Acfg 172.20.10.48" ];
+        
+        
+ 100 -- 102 [color="#006400", headclip=false, tailclip=false];
+
+        
+        103 [ color="#8DFF1D", fontsize=12, style="filled", fixedsize=true, width=0.5, height=0.5, label=<<TABLE BORDER="0"><TR><TD><IMG SRC="../static/images/vm_run.png"/></TD></TR><TR><TD BGCOLOR="#FFFFFF">172.20.10.50</TD></TR></TABLE>>,shape="ellipse", URL="#", tooltip="Acfg 172.20.10.50" ];
+        
+        
+ 100 -- 103 [color="#006400", headclip=false, tailclip=false];
+
+        
+        104 [ color="#8DFF1D", fontsize=12, style="filled", fixedsize=true, width=0.5, height=0.5, label=<<TABLE BORDER="0"><TR><TD><IMG SRC="../static/images/vm_run.png"/></TD></TR><TR><TD BGCOLOR="#FFFFFF">172.20.10.11</TD></TR></TABLE>>,shape="ellipse", URL="#", tooltip="Acfg 172.20.10.11" ];
+        
+        
+ 100 -- 104 [color="#006400", headclip=false, tailclip=false];
+
+        
+        201 [ color="#8DFF1D", fontsize=12, style="filled", fixedsize=true, width=0.5, height=0.5, label=<<TABLE BORDER="0"><TR><TD><IMG SRC="../static/images/vm_run.png"/></TD></TR><TR><TD BGCOLOR="#FFFFFF">172.20.10.47</TD></TR></TABLE>>,shape="ellipse", URL="#", tooltip="Static 172.20.10.47" ];
+        
+        
+ 200 -- 201 [color="#006400", headclip=false, tailclip=false];
+
+        
+        202 [ color="#8DFF1D", fontsize=12, style="filled", fixedsize=true, width=0.5, height=0.5, label=<<TABLE BORDER="0"><TR><TD><IMG SRC="../static/images/vm_run.png"/></TD></TR><TR><TD BGCOLOR="#FFFFFF">172.20.10.45</TD></TR></TABLE>>,shape="ellipse", URL="#", tooltip="Static 172.20.10.45" ];
+        
+        
+ 200 -- 202 [color="#006400", headclip=false, tailclip=false];
+
+        
+        203 [ color="#8DFF1D", fontsize=12, style="filled", fixedsize=true, width=0.5, height=0.5, label=<<TABLE BORDER="0"><TR><TD><IMG SRC="../static/images/vm_run.png"/></TD></TR><TR><TD BGCOLOR="#FFFFFF">172.20.10.44</TD></TR></TABLE>>,shape="ellipse", URL="#", tooltip="Static 172.20.10.44" ];
+        
+        
+ 200 -- 203 [color="#006400", headclip=false, tailclip=false];
+
+        
+        204 [ color="#8DFF1D", fontsize=12, style="filled", fixedsize=true, width=0.5, height=0.5, label=<<TABLE BORDER="0"><TR><TD><IMG SRC="../static/images/vm_run.png"/></TD></TR><TR><TD BGCOLOR="#FFFFFF">172.20.10.10</TD></TR></TABLE>>,shape="ellipse", URL="#", tooltip="Static 172.20.10.10" ];
+        
+        
+ 200 -- 204 [color="#006400", headclip=false, tailclip=false];
+
+        
+        205 [ color="#8DFF1D", fontsize=12, style="filled", fixedsize=true, width=0.5, height=0.5, label=<<TABLE BORDER="0"><TR><TD><IMG SRC="../static/images/vm_run.png"/></TD></TR><TR><TD BGCOLOR="#FFFFFF">172.20.10.9</TD></TR></TABLE>>,shape="ellipse", URL="#", tooltip="Static 172.20.10.9" ];
+        
+        
+ 200 -- 205 [color="#006400", headclip=false, tailclip=false];
+
+        
+        401 [ color="#8DFF1D", fontsize=12, style="filled", fixedsize=true, width=0.5, height=0.5, label=<<TABLE BORDER="0"><TR><TD><IMG SRC="../static/images/vm_run.png"/></TD></TR><TR><TD BGCOLOR="#FFFFFF">172.20.10.55</TD></TR></TABLE>>,shape="ellipse", URL="#", tooltip="TaintChaser 172.20.10.55" ];
+        
+        
+ 400 -- 401 [color="#006400", headclip=false, tailclip=false];
+
+        
+        402 [ color="#8DFF1D", fontsize=12, style="filled", fixedsize=true, width=0.5, height=0.5, label=<<TABLE BORDER="0"><TR><TD><IMG SRC="../static/images/vm_run.png"/></TD></TR><TR><TD BGCOLOR="#FFFFFF">172.20.10.52</TD></TR></TABLE>>,shape="ellipse", URL="#", tooltip="TaintChaser 172.20.10.52" ];
+        
+        
+ 400 -- 402 [color="#006400", headclip=false, tailclip=false];
+
+        
+        403 [ color="#8DFF1D", fontsize=12, style="filled", fixedsize=true, width=0.5, height=0.5, label=<<TABLE BORDER="0"><TR><TD><IMG SRC="../static/images/vm_run.png"/></TD></TR><TR><TD BGCOLOR="#FFFFFF">172.20.10.54</TD></TR></TABLE>>,shape="ellipse", URL="#", tooltip="TaintChaser 172.20.10.54" ];
+        
+        
+ 400 -- 403 [color="#006400", headclip=false, tailclip=false];
+
+        };

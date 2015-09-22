@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<pipeline>
+  <name>sd_pipeline_name</name>
+  <description>
+    <![CDATA[This is a asa pipeline for analysis malicious apk]]>
+  </description>
+  <user_id>0</user_id>
+  <type>com</type>
+  <pu order="1">
+    <template id="4" name="mo_acfg"/>
+    <description><![CDATA[自动化UI探测]]></description>
+    <amount min="0" max="1" />
+    <start>True</start>
+    <input_table>spider_app_download</input_table>
+    <output_table input_task="task_id">acfg_task_result</output_table>
+    <config><![CDATA[DB=task_db
+IP=172.18.205.201]]></config>
+    <config_path><![CDATA[/home/anddev/mod_acfg/ndrc10/dispatch_config_file]]></config_path>
+  </pu>
+  <pu order="2">
+    <template id="6" name="mo_app_static"/>
+    <description><![CDATA[静态嫌疑分析]]></description>
+    <amount min="0" max="1" />
+    <input_table>acfg_task_result</input_table>
+    <output_table>app_static_out</output_table>
+    <config><![CDATA[DB=task_db
+IP=172.18.205.201]]></config>
+    <config_path><![CDATA[/ndrc10_staticApp/schedule/dispatch_config_file]]></config_path>
+  </pu>
+  <pu order="3">
+    <template id="2" name="mo_app_taintchaser"/>
+    <description><![CDATA[动态污点跟踪]]></description>
+    <amount min="0" max="1" />
+    <input_table>app_static_out</input_table>
+    <output_table>app_taintchaser_out</output_table>
+    <config><![CDATA[DB=task_db
+IP=172.18.205.201]]></config>
+    <config_path><![CDATA[/home/taintchaser/schedule/dispatch_config_file]]></config_path>
+  </pu>
+  <pu order="4">
+    <template id="3" name="mo_asma"/>
+    <description><![CDATA[动态符号执行]]></description>
+    <amount min="0" max="1" />
+    <input_table>app_static_group_info</input_table>
+    <output_table>app_asma_out</output_table>
+    <config><![CDATA[DB=task_db
+IP=172.18.205.201]]></config>
+    <config_path><![CDATA[/home/lifad/program/forlifad/schedule/dispatch_config_file]]></config_path>
+  </pu>
+ <pu order="5">
+    <template id="2" name="mo_realmachine"/>
+    <description><![CDATA[动态污点跟踪]]></description>
+    <amount min="0" max="1" />
+    <input_table>app_asma_out</input_table>
+    <output_table>app_realmachine_out</output_table>
+    <config><![CDATA[DB=task_db
+IP=172.18.205.201]]></config>
+    <config_path><![CDATA[/home/taintchaser/schedule/dispatch_config_file]]></config_path>
+  </pu>
+  <policy >
+  <propotion>80</propotion>
+  <content if="" then="mo_app_static:mo_acfg" />
+  </policy>
+   <policy>
+  <propotion>30</propotion>
+   <content if="" then="mo_app_taintchaser:mo_app_static"/>
+  </policy>
+   <policy >
+  <content then="mo_asma:mo_app_static"/>
+  </policy>
+   <policy>
+  <propotion>90</propotion>
+   <content  if="status(mo_asma):1" then="mo_realmachine" />
+  </policy>
+  <table_sqls>
+    <![CDATA[
+CREATE TABLE IF NOT EXISTS `spider_app_download` (
+ `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+ `app_name` varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL,
+ `app_md5` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
+ `app_keywords` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+ `app_url` varchar(1024) COLLATE utf8_unicode_ci DEFAULT NULL,
+ `app_icon` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL,
+ `icon_content` mediumblob,
+ `app_size` varchar(16) COLLATE utf8_unicode_ci DEFAULT NULL,
+ `app_version` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL,
+ `download_times` int(10) unsigned NOT NULL DEFAULT '0',
+ `download_url` varchar(1024) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'apk所在url，字符串',
+ `app_author` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL,
+ `os_version` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL,
+ `path` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL,
+ `app_description` varchar(4096) COLLATE utf8_unicode_ci DEFAULT NULL,
+ `last_update_date` datetime DEFAULT NULL,
+ `output_date` datetime DEFAULT NULL,
+ `app_class` varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '分类信息',
+ `app_market` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL,
+ `market_site` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL,
+ `is_processed` tinyint(4) NOT NULL DEFAULT '0',
+ `user_rate` tinyint(4) DEFAULT NULL,
+ `comments_num` int(10) unsigned NOT NULL DEFAULT '0',
+ `dimension_code` mediumblob,
+ `net_type` tinyint(4) NOT NULL DEFAULT '0',
+ `seed_id` bigint(20) NOT NULL DEFAULT '0',
+ `sdk_version` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
+ `permissions` text COLLATE utf8_unicode_ci,
+ `custom_permissions` text COLLATE utf8_unicode_ci,
+ `app_activity` text COLLATE utf8_unicode_ci,
+ `app_serivce` text COLLATE utf8_unicode_ci,
+ `app_provider` varchar(1024) COLLATE utf8_unicode_ci DEFAULT NULL,
+ `app_package` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL,
+ `firtst_install_time` datetime DEFAULT NULL,
+ PRIMARY KEY (`id`),
+ KEY `app_name` (`app_name`),
+ KEY `app_md5` (`app_md5`),
+ KEY `path` (`path`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `acfg_task_result` (
+ `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+ `task_id` bigint(20) unsigned NOT NULL,
+ `path` varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL,
+ PRIMARY KEY (`id`)
+ ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ 
+CREATE TABLE IF NOT EXISTS `app_asma_out` (
+ `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+ `sat_point` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+ `status` tinyint(3) unsigned NOT NULL COMMENT '0:成功 1:下载失败 7:未到出口 8:未到入口',
+ PRIMARY KEY (`id`)
+) ENGINE=MyISAM;
+
+CREATE TABLE IF NOT EXISTS `app_static_out` (
+ `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+ `app_name` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=MyISAM;
+
+CREATE TABLE IF NOT EXISTS `app_taintchaser_out` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `send_addr` varchar(64) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+ `status` int(11) NOT NULL DEFAULT '0' COMMENT '-1:未知原因,0:成功, 1:解析xml错误，2:解压失败，3:安装失败，4:运行软件失败,10000表示泄露，5000表示超时',
+ PRIMARY KEY (`id`)
+) ENGINE=MyISAM;
+
+CREATE TABLE IF NOT EXISTS `app_realmachine_out` (
+ `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+ `apk_md5` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=MyISAM;
+    ]]>
+  </table_sqls>
+</pipeline>
+

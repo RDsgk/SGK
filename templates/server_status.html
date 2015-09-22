@@ -1,0 +1,125 @@
+<div  id="main"  class="clearfix">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+
+      <div  class="mainPad">
+        <div  id="top-strip"></div>
+        <div  id="content">
+          <div  class="body-disabled-overlay invisible"> <span  class="invisible registration-url">/licenses</span>
+            <div  class="container"> </div>
+          </div>
+          <noscript>
+          &lt;p class="noscript_warning"&gt;Please enable JavaScript&lt;/p&gt;
+          </noscript>
+          <div  class="float-Rt"> </div>
+          <div  id="crumbHolder"  class="clearfix">
+            <div  id="breadcrumb"  class="clearfix"> <a  href="#">SGK</a><span  class="last"><a  href="/log">服务器状态</a></span> </div>
+          </div>
+<div  class="mainContent">
+            <div  id="flash_messages"> </div>
+            <div  class="one_col_no_sidebar">
+<div class="tab_panel">
+ <fieldset  class="inputs" style=" box-shadow: 3px 3px 4px #dddddd;width: 95%;margin: 0 auto;margin-top: 15px;
+margin-bottom: 10px;background-color: #fff;padding: 5px 20px; ">
+ <legend style="font-size: 16px;font-weight: bold;color: #000;">系统基本信息</legend>
+                  <ol  style="width:auto; padding-left:10%">
+<div  id="known_targets"  style="width: 95%; float: left;">
+                    <table  width="100%"  class="list mar-tb10">
+                      <thead>
+                        <tr>
+                          <th>cpu框架</th>
+                          <th>系统内核</th>
+                          <th>GNU/Linux</th>
+ 			  <th>服务器</th>
+
+                      <tbody  id="vhost_list">
+                      <tr  class="odd">
+                        <td align="center"  valign="top">{{ sysinfo.0}}</td>
+			<td align="center"  valign="top">{{ sysinfo.1}}</td>
+			<td align="center"  valign="top">{{ sysinfo.2}}</td>
+			<td align="center"  valign="top">{{ sysinfo.3}}</td>
+                      </tr>
+                        </tbody>
+
+                    </table>
+                  </div>
+</ol>
+
+
+                </fieldset>
+
+ <fieldset  class="inputs" style=" box-shadow: 3px 3px 4px #dddddd;width: 95%;margin: 0 auto;margin-top: 15px;
+margin-bottom: 10px;background-color: #fff;padding: 5px 20px; ">
+ <legend style="font-size: 16px;font-weight: bold;color: #000;">集群基本状态</legend>
+                  <ol  style="width:auto; padding-left:10%">
+<div  id="known_targets"  style="width: 95%; float: left;">
+                    <table  width="100%"  class="list mar-tb10">
+                      <thead>
+                        <tr>
+                          <th>状态</th>
+                          <th>名字</th>
+                          <th>集群名字</th>
+                          <th>版本 </th>
+                      <tbody  id="vhost_list">
+                      <tr  class="odd">
+                        <td align="center"  valign="top">200</td>
+                        <td align="center"  valign="top">node_1</td>
+                        <td align="center"  valign="top">elasticsearch_sgk</td>
+                        <td align="center"  valign="top">1.6.2</td>
+                      </tr>
+                        </tbody>
+
+                    </table>
+                  </div>
+</ol>
+                
+
+                </fieldset>
+
+ <fieldset  class="inputs" style=" box-shadow: 3px 3px 4px #dddddd;width: 95%;margin: 0 auto;margin-top: 15px;
+margin-bottom: 10px;background-color: #fff;padding: 5px 20px; ">
+ <legend style="font-size: 16px;font-weight: bold;color: #000;">CPU信息</legend>
+                  <ol  style="width:auto; padding-left:10%">
+<div  id="known_targets"  style="width: 95%; float: left;">
+                    <table  width="100%"  class="list mar-tb10">
+                      <thead>
+                        <tr>
+                          <th>CPU</th>
+                      <tbody  id="vhost_list">
+                      <tr  class="odd">
+                        <td align="center"  valign="top">{{ cpuName }}</td>
+                      </tr>
+                        </tbody>
+
+                    </table>
+                  </div>
+</ol>
+
+
+                </fieldset>
+ <fieldset  class="inputs" style=" box-shadow: 3px 3px 4px #dddddd;width: 95%;margin: 0 auto;margin-top: 15px;
+margin-bottom: 10px;background-color: #fff;padding: 5px 20px; ">
+ <legend style="font-size: 16px;font-weight: bold;color: #000;">内存信息</legend>
+                  <ol  style="width:auto; padding-left:10%">
+<div  id="known_targets"  style="width: 95%; float: left;">
+                    <table  width="100%"  class="list mar-tb10">
+                      <thead>
+                        <tr>
+                          <th>内存容量</th>
+			  <th>可用内存</th>
+  			  <th>预留未使用内存</th>
+                      <tbody  id="vhost_list">
+                      <tr  class="odd">
+                        <td align="center"  valign="top">{{ memtargetinfo.0 }}</td>
+			<td align="center"  valign="top">{{ memtargetinfo.1 }}</td>
+			<td align="center"  valign="top">{{ memtargetinfo.2 }}</td>
+                      </tr>
+                        </tbody>
+
+                    </table>
+                  </div>
+</ol>
+
+
+                </fieldset>
+</div>

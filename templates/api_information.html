@@ -1,0 +1,553 @@
+<script src="/static/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+    //table different colors
+    console.log('tttt')
+    update_method()
+    update_ip()
+    update_status()
+    update_api()
+    update_visit()
+    var colors = ['#D9D3D4', '#ffffff'];
+    $("table").find("tr").each(function(i){
+        $(this).css("background-color", colors[i % 2]);
+    });
+});
+</script>
+
+    <!--此处开始添加模块-->
+<div  id="main"  class="clearfix">
+      <div  class="mainPad">
+        <div  id="top-strip"></div>
+        <div  id="content">
+          <div  class="body-disabled-overlay invisible"> <span  class="invisible registration-url">/licenses</span>
+            <div  class="container"> </div>
+          </div>
+          <div  class="float-Rt"> </div>
+          <div  id="crumbHolder"  class="clearfix">
+            <div  id="breadcrumb"  class="clearfix"> <a  href="/">VARAS</a><a  href="/">AdminWeb</a><a href="/cm/monitor/">运行监控</a><span  class="last"><a href="#">服务监控</a></span> </div>
+          </div>
+          <div  class="mainContent">
+            <div  id="flash_messages"> </div>
+              <div  style="margin:0;padding:0;display:inline"> </div>
+              <div  id="popup_errors"></div>
+              <div  class="one_col_with_sidebar">
+        <form name="theForm" method="POST" action="/cm/monitor-refresh/"    class="formtastic webscan_task"  novalidate="novalidate">
+              <fieldset  class="inputs">
+              <input type=hidden name=control_time id=control_time_id value={{ control_time }} >
+              <input type=hidden name=network_time id=network_time_id value={{ network_time }} >
+                <legend><span>服务监控</span></legend>
+                <ol>
+        </form>
+
+     <a  href="#"  class="help"  data-field="webscan_tasks_known_targets_input"  style="float: right;"  target="_blank"></a>
+                </ol>
+        
+
+<div id="ip"  style="width:45%;height:250px;border:1px solid#cccccc;float:left;margin-left:4%">
+</div>
+<div id="method" style="width:45%;height:250px;border:1px solid#cccccc;float:left;margin-left:1%">
+</div> 
+<div id="api" style="width:45%;height:250px;border:1px solid#cccccc;float:left;margin-left:4%">
+</div>
+<div id="status" style="width:45%;height:250px;border:1px solid#cccccc;float:left;margin-left:1%">
+</div>
+<div id="line" style="width:91%;height:300px;border:1px solid#cccccc;float:left;margin-left:4%">
+</div>
+              </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<script src="/static/js/highcharts.js"></script>
+<script src="/static/js/highcharts-3d.js"></script>
+<script src="/static/js/exporting.js"></script>
+
+<script src="/static/js/jquery-1.6.2.min.js"></script>
+
+<script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+optionip = {
+    chart: {
+        renderTo: 'ip',  //控制加载到那个div文件中
+        type: 'pie',
+        options3d: {
+            enabled: true,
+            alpha: 45,
+            beta: 0
+        }
+    },
+    exporting: {
+        enabled: false
+    },
+    title: {
+        text: '访问来源统计',
+                style: {
+                        fontSize: '18px',
+                                         fontWeight:'bold',
+                }, 
+    },
+    subtitle: {
+        text: ''
+    },
+
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+
+    legend:{
+	layout:'vertical',
+	align:'right',
+	y:-50,
+},
+
+
+
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            depth: 35,
+            dataLabels: {
+                enabled: true,
+                format: '{point.name}'
+            },
+	    showInLegend:true
+        }
+    },
+    series: [{
+        type: 'pie',
+        name: '占比',
+        data: [
+        ['安智市场',   10.45],
+        ['木蚂蚁软件市场',       11.49],
+        ['机锋市场',       17.25],
+        ['乐商店',    10.11],
+        ['16软件市场',     6.55],
+        ['安粉网',     6.32],
+        ['其他',   37.83]
+        ]
+    }]
+};
+
+optionmethod = {
+    chart: {
+        renderTo: 'method',  //控制加载到那个div文件中
+        type: 'pie',
+        options3d: {
+            enabled: true,
+            alpha: 45,
+            beta: 0
+        }
+    },
+    exporting: {
+        enabled: false
+    },
+    title: {
+        text: '访问方法统计',
+                style: {
+                        fontSize: '18px',
+                                         fontWeight:'bold',
+                }, 
+    },
+    subtitle: {
+        text: ''
+    },
+
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+
+    legend:{
+        layout:'vertical',
+        align:'right',
+        y:-110,
+	x:-50
+},
+
+
+
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            depth: 35,
+            dataLabels: {
+                enabled: true,
+                format: '{point.name}'
+            },
+            showInLegend:true
+        }
+    },
+    series: [{
+        type: 'pie',
+        name: '占比',
+        data: [
+        ['安智市场',   10.45],
+        ['木蚂蚁软件市场',       11.49],
+        ['机锋市场',       17.25],
+        ['乐商店',    10.11],
+        ['16软件市场',     6.55],
+        ['安粉网',     6.32],
+        ['其他',   37.83]
+        ]
+    }]
+};
+
+optionstatus = {
+    chart: {
+        renderTo: 'status',  //控制加载到那个div文件中
+        type: 'pie',
+        options3d: {
+            enabled: true,
+            alpha: 45,
+            beta: 0
+        }
+    },
+    exporting: {
+        enabled: false
+    },
+    title: {
+        text: '访问结果状态码统计',
+                style: {
+                        fontSize: '18px',
+                                         fontWeight:'bold',
+                }, 
+    },
+    subtitle: {
+        text: ''
+    },
+
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+
+    legend:{
+        layout:'vertical',
+        align:'right',
+        y:-80,
+	x:-50
+},
+
+
+
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            depth: 35,
+            dataLabels: {
+                enabled: true,
+                format: '{point.name}'
+            },
+            showInLegend:true
+        }
+    },
+    series: [{
+        type: 'pie',
+        name: '占比',
+        data: [
+        ['安智市场',   10.45],
+        ['木蚂蚁软件市场',       11.49],
+        ['机锋市场',       17.25],
+        ['乐商店',    10.11],
+        ['16软件市场',     6.55],
+        ['安粉网',     6.32],
+        ['其他',   37.83]
+        ]
+    }]
+};
+
+optionapi = {
+    chart: {
+        renderTo: 'api',  //控制加载到那个div文件中
+        type: 'pie',
+        options3d: {
+            enabled: true,
+            alpha: 45,
+            beta: 0
+        }
+    },
+    exporting: {
+        enabled: false
+    },
+    title: {
+        text: '访问API统计',
+                style: {
+                        fontSize: '18px',
+                                         fontWeight:'bold',
+                }, 
+    },
+    subtitle: {
+        text: ''
+    },
+
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>',
+    },
+
+    legend:{
+        layout:'vertical',
+        align:'right',
+        y:-50,
+	itemWidth:120
+},
+
+
+
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            depth: 35,
+            dataLabels: {
+                enabled: true,
+                format: '{point.name}'
+            },
+            showInLegend:true
+        }
+    },
+    series: [{
+        type: 'pie',
+        name: '占比',
+        data: [
+        ['安智市场',   10.45],
+        ['木蚂蚁软件市场',       11.49],
+        ['机锋市场',       17.25],
+        ['乐商店',    10.11],
+        ['16软件市场',     6.55],
+        ['安粉网',     6.32],
+        ['其他',   37.83]
+        ]
+    }]
+};
+
+
+
+option_line = { 
+        chart: {
+            renderTo: 'line',  //控制加载到那个div文件中
+            type: 'line'
+        },  
+        credits:{
+                enabled:false
+},
+    exporting: {
+        enabled: false
+    },  
+        title: {
+            text: '访问次数统计图',
+                style: {
+                        fontSize: '18px',
+                                         fontWeight:'bold',
+                },  
+        },  
+        xAxis: {
+            categories: ["2015-01-09","2015-01-10","2015-01-11","2015-01-12","2015-01-13","2015-01-14","2015-01-15","2015-01-16","2015-01-17","2015-01-18","2015-01-19","2015-01-20","2015-01-21"],
+            labels: {
+                rotation: -70,
+                style:{
+                        fontSize:10,    
+},
+
+            },  
+        },
+        yAxis: {
+            min:0,
+            title: {
+                text: '次数'
+            },
+        },
+        plotOptions: {
+
+                series:{
+                marker:{
+                    radius:0,
+                },
+            },
+
+                line: {
+                dataLabels: {
+                    enabled: false
+                },
+                enableMouseTracking: false
+            }
+        },
+
+        tooltip:{
+                pointFormat:'{series.name}: <b>{point.y}</b>'
+},
+
+        legend:{
+            y:10000
+        },
+        series: [{
+            name: '新发现异常数量',
+            data: [4770,6267,4604,5045,2703,5332,4936,4964,7000,7223,6484,6537,3259]
+        },
+        ]
+};
+
+chart_pie1=new Highcharts.Chart(optionip);
+chart_pie2=new Highcharts.Chart(optionmethod);
+chart_pie3=new Highcharts.Chart(optionstatus);
+chart_pie4=new Highcharts.Chart(optionapi);
+chart_pie5=new Highcharts.Chart(option_line);
+//chart_new=new Highcharts.Chart(option1);
+   //调节柱状图的角度
+   function showValues() {
+        $('#R0-value').html(chart.options.chart.options3d.alpha);
+        $('#R1-value').html(chart.options.chart.options3d.beta);
+    }
+
+    // Activate the sliders
+    $('#R0').on('change', function () {
+        chart.options.chart.options3d.alpha = this.value;
+        showValues();
+        chart.redraw(false);
+    });
+    $('#R1').on('change', function () {
+        chart.options.chart.options3d.beta = this.value;
+        showValues();
+        chart.redraw(false);
+    });
+    showValues();
+function update_ip()
+{
+	console.log('update ip')
+	$.post("/cm/api-ip/",function(data){
+	json_obj=JSON.parse(data);
+	var test=json_obj[0].ip_data
+        show_ip_info(test)
+});
+}
+function show_ip_info(item){
+	console.log('show in info')
+	var len=item.length;
+ 	pie=[];
+        
+	for(var i=0;i<len;i++){
+		var pie_data=item[i]['ip']
+ 		var pie_tuli=item[i]['number']
+		pie_test=[pie_data,pie_tuli]
+		pie.push(pie_test)
+}
+	console.log(pie)
+ 	piechart= new Highcharts.Chart(optionip);
+        piechart.series[0].setData(pie,false);
+	piechart.redraw();
+}
+
+function update_method()
+{
+        console.log('update method')
+        $.post("/cm/api-method/",function(data){
+        json_obj=JSON.parse(data);
+        var test=json_obj[0].method_data
+        show_method_info(test)
+});
+}
+function show_method_info(item){
+        console.log('show method info')
+        var len=item.length;
+        pie=[];
+        
+        for(var i=0;i<len;i++){
+                var pie_data=item[i]['method']
+                var pie_tuli=item[i]['number']
+                pie_test=[pie_data,pie_tuli]
+                pie.push(pie_test)
+}
+        console.log(pie)
+        piechart= new Highcharts.Chart(optionmethod);
+        piechart.series[0].setData(pie,false);
+        piechart.redraw();
+}
+
+function update_status()
+{
+        console.log('update status')
+        $.post("/cm/api-status/",function(data){
+        json_obj=JSON.parse(data);
+        var test=json_obj[0].status_data
+        show_status_info(test)
+});
+}
+function show_status_info(item){
+        console.log('show status info')
+        var len=item.length;
+        pie=[];
+        
+        for(var i=0;i<len;i++){
+                var pie_data=item[i]['status']
+                var pie_tuli=item[i]['number']
+                pie_test=[pie_data,pie_tuli]
+                pie.push(pie_test)
+}
+        console.log(pie)
+        piechart= new Highcharts.Chart(optionstatus);
+        piechart.series[0].setData(pie,false);
+        piechart.redraw();
+}
+function update_api()
+{
+        console.log('update status')
+        $.post("/cm/api-api/",function(data){
+        json_obj=JSON.parse(data);
+        var test=json_obj[0].api_data
+        show_api_info(test)
+});
+}
+function show_api_info(item){
+        console.log('show apiapiapiapiapi')
+        var len=item.length;
+        pie=[];
+        
+        for(var i=0;i<len;i++){
+                var pie_data=item[i]['api']
+                var pie_tuli=item[i]['number']
+                pie_test=[pie_data,pie_tuli]
+                pie.push(pie_test)
+}
+        console.log(pie)
+        piechart= new Highcharts.Chart(optionapi);
+        piechart.series[0].setData(pie,false);
+        piechart.redraw();
+}
+
+function update_visit()
+{
+	console.log('updata cisit')
+        $.post("/cm/api-line/",function(data){
+        json_obj=JSON.parse(data);
+        console.log(json_obj)
+        var test=json_obj[0].visit_data
+        console.log(test)
+	
+        show_visit_info(test)
+});	
+}
+function show_visit_info(item)
+{
+	var len=item.length;
+	data_x=[];
+	data_y=[];
+	for (var i=0;i<len;i++){
+		var riqi=item[i]['date']
+		data_x.push(riqi)
+		var count=item[i]['number']
+		data_y.push(count)
+}
+	console.log(data_x)
+	console.log(data_y)
+	linechart=new Highcharts.Chart(option_line);
+	linechart.xAxis[0].setCategories((data_x),false);
+        linechart.series[0].setData(data_y,false);
+	linechart.redraw()
+}
+
+</script>
+

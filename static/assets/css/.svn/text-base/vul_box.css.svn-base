@@ -1,0 +1,313 @@
+@charset "utf-8";
+/* CSS Document */
+
+.color_box {
+	width: 82px;
+	height: 60px;
+	background: #000000;
+	box-shadow: 2px 2px 2px #666;
+	border-radius: 10px 10px;
+	padding-top: 1px;
+}
+.varas_vul {
+	background: #C3C;
+	position: relative;
+	top: 0px;
+	left: 200px;
+}
+/*第二行*/
+.public_vul {
+	background: #F63;
+	float: left;
+	position: relative;
+	top: -20px;
+	left: 90px;
+	background: #09C;
+}
+.save_vul {
+	float: left;
+	background: #F63;
+	position: relative;
+	top: -20px;
+	left: 230px;
+	background: #B52D2D;
+}
+/*第二行结束*/
+/*第三行*/
+.com_vul {
+	width: 75px;
+	float: left;
+	background: #096;
+	position: relative;
+	top: -83px;
+	left: 5px;
+	;
+}
+.outside_vul {
+	width: 90px;
+	float: left;
+	background: #096;
+	position: relative;
+	left: 13px;
+	top: -83px;
+}
+.report_vul {
+	width: 75px;
+	float: left;
+	background: #096;
+	position: relative;
+	left: 20px;
+	top: -83px;
+}
+.used_vul {
+	width: 70px;
+	float: left;
+	background: #C60;
+	position: relative;
+	left: 40px;
+	top: -83px;
+}
+.unused_vul {
+	width: 70px;
+	float: left;
+	background: #C60;
+	position: relative;
+	left: 48px;
+	top: -83px;
+}
+/*第三行结束*/
+.clearfix {
+	clear: both;
+}
+.first_horizontal_line {
+	height: 1px;
+	width: 220px;
+	position: relative;
+	top: -2px;
+	left: 30px;
+}
+.sec_horizontal_line {
+	height: 1px;
+	width: 180px;
+	position: relative;
+	top: -32px;
+	left: -80px;
+}
+.third_horizontal_line {
+	height: 1px;
+	width: 80px;
+	position: relative;
+	top: -42px;
+	left: 140px;
+}
+/*竖线*/
+.vertical_line {
+	transform: rotate(90deg);
+	height: 1px;
+	width: 10px;
+}
+.first_vertical_line {
+	position: relative;
+	top: 0px;
+	left: 30px;
+}
+.sec_vertical_line {
+	position: relative;
+	top: -5px;
+	left: -81px;
+}
+.third_vertical_line {
+	position: relative;
+	top: -15px;
+	left: 140px;
+}
+.forth_vertical_line {
+	position: relative;
+	top: -20px;
+	left: -85px;
+}
+.fifth_vertical_line {
+	position: relative;
+	top: -30px;
+	left: 140px;
+}
+.sixth_vertical_line {
+	position: relative;
+	top: -43px;
+	left: -171px;
+}
+.seventh_vertical_line {
+	position: relative;
+	top: -54px;
+	left: -85px;
+}
+.eightth_vertical_line {
+	position: relative;
+	top: -63px;
+	left: 10px;
+}
+.nineth_vertical_line {
+	position: relative;
+	top: -73px;
+	left: 97px;
+}
+.tenth_vertical_line {
+	position: relative;
+	top: -82px;
+	left: 180px;
+}
+.name_vul {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	height: 15px;
+	line-height: 15px;
+	text-align: center;
+	margin: 10px auto;
+	color: #fff;
+}
+.num_vul {
+	font-family: "Times New Roman", Times, serif;
+	font-weight: bold;
+	text-align: center;
+	border-top: 1px solid #000;
+	margin: 0 auto;
+	padding: 3px;
+	color: #fff;
+}
+.name_vul_s {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	margin: 10px auto;
+	color: #fff;
+}
+.pre1 {
+	width: 0;
+	height: 0;
+	border: 10px solid;
+	position: relative;
+	left: 5px;
+	border-color: transparent transparent transparent #FFF;
+}
+.pre2 {
+	width: 0;
+	height: 0;
+	border: 10px solid;
+	position: relative;
+	top: -20px;
+}
+.vul_deal {
+	border-radius: 15px;
+	height: 60px;
+	width: 400px;
+/*	box-shadow: 2px 5px 10px #333;  */
+	margin:0 auto;
+	position:relative;
+	top:20px;
+}
+.vul_text {background:url(/static/assets/images/blue_bg.png) no-repeat ; width:96px; height:40px; float:left; line-height:40px; font-family: Arial, Helvetica, sans-serif;font-size: 10px; color:#fff; text-align:center;}
+
+.vul_deal .vul_yitijiao {
+	background-color: #096;
+	height: 60px;
+	width: 78px;
+	float: left;
+	border-radius: 10px 0px 0px 10px;
+}
+.vul_deal .vul_daichushen {
+	background-color: #C60;
+	height: 60px;
+	width: 78px;
+	float: left;
+}
+.vul_deal .vul_daipingshen {
+	background-color: #09C;
+	height: 60px;
+	width: 78px;
+	float: left;
+}
+.vul_deal .vul_daishenhe {
+	background-color: #B52D2D;
+	height: 60px;
+	width: 78px;
+	float: left;
+}
+.vul_deal .vul_varas {
+	background-color: #C3C;
+	height: 60px;
+	width: 88px;
+	float: left;
+	border-radius: 0px 10px 10px 0px;
+}
+/*第一个箭头*/
+.pre_first {
+	position: relative;
+	top: 25px;
+	left: 70px;
+}
+.pre_first .pre2 {
+	border-color: transparent transparent transparent #096;
+}
+/*第二个箭头*/
+.pre_sec {
+	position: relative;
+	top: -15px;
+	left: 148px;
+}
+.pre_sec .pre2 {
+	border-color: transparent transparent transparent #C60;
+}
+/*第三个箭头*/
+.pre_third {
+	position: relative;
+	top: -55px;
+	left: 226px;
+}
+.pre_third .pre2 {
+	border-color: transparent transparent transparent #09C;
+}
+/*第四个箭头*/
+.pre_forth {
+	position: relative;
+	top: -95px;
+	left: 303px;
+}
+.pre_forth .pre2 {
+	border-color: transparent transparent transparent #B52D2D;
+}
+.vul_arrow { width:450px; height:40px; margin-left:40px;}
+.vul_box { width:80px; margin-left:-20px; height:40px; float:left;background:linear-gradient(top,rgb(220,220,220),rgb(61,134,198) 100%);background:-webkit-linear-gradient(top,rgb(220,220,220),rgb(61,134,198) 100%);}
+.vul_box1:before{ content:'';display:block;width: 0;
+	height: 0;
+	border: 20px solid;
+	border-color: transparent transparent transparent #FFF;
+	float:left; }
+
+.vul_box2:before{ content:'';display:block;width: 0;
+	height: 0;
+	border: 20px solid;
+	border-color: transparent transparent transparent #FFF;
+	float:left; }
+.vul_box3:before{ content:'';display:block;width: 0;
+	height: 0;
+	border: 20px solid;
+	border-color: transparent transparent transparent #FFF;
+	float:left; }
+.vul_box4:before{ content:'';display:block;width: 0;
+	height: 0;
+	border: 20px solid;
+	border-color: transparent transparent transparent #FFF;
+	float:left;  }
+.vul_box5:before{ content:'';display:block;width: 0;
+	height: 0;
+	border: 20px solid;
+	border-color: transparent transparent transparent #FFF;
+	float:left; }
+.zfx{width:28.3px; height:28.3px; transform:rotate(45deg);background:linear-gradient(left top,rgb(220,220,220),rgb(61,134,198) 100%);background:-webkit-linear-gradient( left top,rgb(220,220,220),rgb(61,134,198) 100%); float:left;}
+.zfx1 { position:relative; top:6px; left:-15px;}
+.zfx2 { position:relative; top:6px; left:-15px;}
+.zfx3 { position:relative; top:6px; left:-15px;}
+.zfx4 { position:relative; top:6px; left:-15px;}
+.zfx5 { position:relative; top:6px; left:-15px;}

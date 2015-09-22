@@ -1,0 +1,36 @@
+#container {
+width: 1200px;
+height: 650px;
+margin: 0 auto;
+position: relative;
+}
+
+#left-container {
+left: 0;
+width: 300px;
+height:650px;
+background-position: center right;
+
+
+color: #686c70;
+text-align: left;
+overflow: auto;
+
+position: absolute;
+top: 0;
+height: 650px;
+}
+#center-container{
+width: 900px;
+left:300px;
+color:#ccc;
+height:650px;
+
+position: absolute;
+top: 0;
+height: 650px;
+
+
+
+}
+

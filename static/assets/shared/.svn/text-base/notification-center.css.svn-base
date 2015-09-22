@@ -1,0 +1,324 @@
+/* line 23, ../../../app/assets/stylesheets/shared/variables.scss */
+.sexy-font {
+  font-family: "roboto", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Arial Narrow", Helvetica, san-serif;
+  font-weight: 300;
+}
+
+/* line 28, ../../../app/assets/stylesheets/shared/variables.scss */
+.small-caps-font {
+  font-family: "roboto", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Arial Narrow", Helvetica, san-serif;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  font-size: 20px;
+  position: relative;
+}
+
+/* line 8, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+.nano {
+  width: 310px;
+}
+/* line 10, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+.nano .pane {
+  width: 8px;
+  padding-right: 1px;
+  background: transparent;
+}
+/* line 14, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+.nano .pane .slider {
+  -moz-border-radius: 5px;
+  /* Gecko */
+  -webkit-border-radius: 5px;
+  /* Webkit */
+  -khtml-border-radius: 5px;
+  /* Konqueror */
+  border-radius: 5px;
+  /* CSS3 */
+}
+
+@media (min-width: 1426px) {
+  /* line 22, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+  #notification-center-region {
+    right: -30px !important;
+  }
+}
+/* line 27, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#header #top-menu ul.drop-menu li.notification-menu {
+  background-color: #8FD551;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  -moz-transition: background-color 0.2s ease-in-out;
+  -o-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+}
+/* line 34, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#header #top-menu ul.drop-menu li.notification-menu:hover {
+  -moz-box-shadow: 0 0 3px rgba(46, 73, 21, 0.2);
+  -o-box-shadow: 0 0 3px rgba(46, 73, 21, 0.2);
+  -webkit-box-shadow: 0 0 3px rgba(46, 73, 21, 0.2);
+  box-shadow: 0 0 3px rgba(46, 73, 21, 0.2);
+}
+/* line 37, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#header #top-menu ul.drop-menu li.notification-menu.empty:hover {
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+/* line 40, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#header #top-menu ul.drop-menu li.notification-menu.empty:active, #header #top-menu ul.drop-menu li.notification-menu:active {
+  -moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+/* line 43, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#header #top-menu ul.drop-menu li.notification-menu.selected, #header #top-menu ul.drop-menu li.notification-menu.selected:hover {
+  background-color: #FFFFFF;
+  -moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+}
+/* line 47, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#header #top-menu ul.drop-menu li.notification-menu.selected .menu-title, #header #top-menu ul.drop-menu li.notification-menu.selected:hover .menu-title {
+  color: #555;
+}
+/* line 51, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#header #top-menu ul.drop-menu li.notification-menu.selected.empty, #header #top-menu ul.drop-menu li.notification-menu.selected:hover.empty {
+  background-color: #FFFFFF;
+}
+/* line 53, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#header #top-menu ul.drop-menu li.notification-menu.selected.empty .menu-title, #header #top-menu ul.drop-menu li.notification-menu.selected:hover.empty .menu-title {
+  color: #555;
+}
+/* line 58, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#header #top-menu ul.drop-menu li.notification-menu.empty.selected, #header #top-menu ul.drop-menu li.notification-menu.empty.selected:hover {
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+/* line 61, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#header #top-menu ul.drop-menu li.notification-menu.empty {
+  background-color: #777777;
+}
+/* line 65, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#header #top-menu ul.drop-menu li.notification-menu.flash {
+  background-color: #ea5709;
+}
+
+/* line 70, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+.notification-center-container.hidden {
+  display: none;
+}
+
+/* line 74, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+.notification-nub {
+  background-image: url(/assets/nub.png);
+  width: 14px;
+  height: 12px;
+  margin-left: 7px;
+  z-index: 10002;
+  position: absolute;
+}
+
+/* line 83, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#notification-center-region {
+  position: absolute;
+  width: 310px;
+  right: 0;
+  top: 45px;
+  z-index: 10001;
+  overflow-y: auto;
+  background-color: #FFFFFF;
+  -moz-border-radius: 4px;
+  /* Gecko */
+  -webkit-border-radius: 4px;
+  /* Webkit */
+  -khtml-border-radius: 4px;
+  /* Konqueror */
+  border-radius: 4px;
+  /* CSS3 */
+  -moz-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.17);
+  -o-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.17);
+  -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.17);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.17);
+  border: solid 1px #C1C1C1;
+  border-top: solid 1px #d0d0d0;
+}
+/* line 97, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#notification-center-region .notification-list {
+  position: static;
+  right: 0px;
+  font-family: "roboto", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Arial Narrow", Helvetica, san-serif;
+}
+/* line 102, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#notification-center-region .notification-list .notification-type {
+  padding: 6px 0px 6px 0px;
+  border-bottom: 1px solid #E6E6E6;
+  height: 20px;
+}
+/* line 107, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#notification-center-region .notification-list .notification-type .type-title {
+  padding: 0px 10px 0px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #E95709;
+  line-height: 22px;
+  float: left;
+}
+/* line 115, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#notification-center-region .notification-list .notification-type .sort-options {
+  float: right;
+  margin-right: 6px;
+}
+/* line 122, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#notification-center-region .notification-list .notifications-container {
+  width: 100%;
+}
+/* line 125, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#notification-center-region .notification-list .notifications-container .scrollable-container {
+  width: 310px;
+}
+/* line 127, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#notification-center-region .notification-list .notifications-container .scrollable-container > div > div:last-child > div.notification-message {
+  border-bottom: 0;
+}
+/* line 131, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#notification-center-region .notification-list .notifications-container .scrollable-container .no-new-notifications {
+  padding: 9px 0;
+  color: #555;
+  text-align: center;
+}
+/* line 135, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#notification-center-region .notification-list .notifications-container .scrollable-container .no-new-notifications:hover {
+  background: #f6f6f6;
+  cursor: auto;
+}
+/* line 141, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#notification-center-region .notification-list .notifications-container .scrollable-container .notification-message {
+  cursor: pointer;
+  width: 310px;
+  border-bottom: 1px solid #E6E6E6;
+  background: #f6f6f6;
+  position: relative;
+}
+/* line 152, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#notification-center-region .notification-list .notifications-container .scrollable-container .notification-message:hover {
+  background-color: #e9e9e9;
+}
+/* line 154, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#notification-center-region .notification-list .notifications-container .scrollable-container .notification-message:hover .action-bar {
+  display: block;
+}
+/* line 159, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#notification-center-region .notification-list .notifications-container .scrollable-container .notification-message .action-bar {
+  display: none;
+  position: absolute;
+  bottom: 6px;
+  right: 10px;
+  height: 20px;
+  border: solid 1px #C1C1C1;
+  padding: 0px 8px 0 8px;
+  cursor: pointer;
+  color: #333;
+  -moz-border-radius: 4px;
+  /* Gecko */
+  -webkit-border-radius: 4px;
+  /* Webkit */
+  -khtml-border-radius: 4px;
+  /* Konqueror */
+  border-radius: 4px;
+  /* CSS3 */
+  background-color: #e5e5e5;
+  background-image: -moz-linear-gradient(#fbfbfb, #e5e5e5);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fbfbfb), color-stop(1, #e5e5e5));
+  background-image: -webkit-linear-gradient(#fbfbfb, #e5e5e5);
+  background-image: -o-linear-gradient(#fbfbfb, #e5e5e5);
+  background-image: -ms-linear-gradient(top, #fbfbfb, #e5e5e5);
+  background-image: linear-gradient(top, #fbfbfb, #e5e5e5);
+}
+/* line 171, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#notification-center-region .notification-list .notifications-container .scrollable-container .notification-message .action-bar span.close {
+  font-size: 16px;
+  line-height: 21px;
+  vertical-align: middle;
+  padding: 0;
+  font-weight: 600;
+  font-family: "roboto", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Arial Narrow", Helvetica, san-serif;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+/* line 180, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#notification-center-region .notification-list .notifications-container .scrollable-container .notification-message .action-bar:hover {
+  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+/* line 183, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#notification-center-region .notification-list .notifications-container .scrollable-container .notification-message .action-bar:active {
+  -moz-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+}
+/* line 189, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#notification-center-region .notification-list .notifications-container .scrollable-container .notification-message .table-container {
+  display: table;
+  width: 100%;
+}
+/* line 193, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#notification-center-region .notification-list .notifications-container .scrollable-container .notification-message .table-container .status-bar {
+  vertical-align: top;
+  display: table-cell;
+  background-color: #8FD551;
+  width: 5px;
+}
+/* line 200, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#notification-center-region .notification-list .notifications-container .scrollable-container .notification-message .table-container .content-cell {
+  display: table-cell;
+  padding: 6px 0px 6px 15px;
+}
+/* line 205, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#notification-center-region .notification-list .notifications-container .scrollable-container .notification-message .table-container .content-cell .details .text {
+  max-width: 145px;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+/* line 213, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#notification-center-region .notification-list .notifications-container .scrollable-container .notification-message .table-container .content-cell .details .humanized {
+  margin-left: 2px;
+  display: inline-block;
+  vertical-align: middle;
+}
+/* line 220, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#notification-center-region .notification-list .notifications-container .scrollable-container .notification-message .table-container .content-cell .message {
+  line-height: 1;
+}
+/* line 222, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#notification-center-region .notification-list .notifications-container .scrollable-container .notification-message .table-container .content-cell .message .system-badge {
+  font-size: 11px;
+  padding: 2px;
+  color: #FFFFFF;
+  background-color: #D5D5D5;
+}
+/* line 233, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#notification-center-region .notification-list .notifications-container .scrollable-container .notification-message.message-read .status-bar {
+  background-color: #D5D5D5;
+}
+/* line 242, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#notification-center-region .notification-list .notifications-footer .more-text {
+  border-top: 1px solid #e0e0e0;
+  text-align: center;
+  color: #E95709;
+  padding: 8px 0;
+  cursor: pointer;
+  font-weight: 600;
+}
+/* line 249, ../../../app/assets/stylesheets/shared/notification-center.css.scss.erb */
+#notification-center-region .notification-list .notifications-footer .more-text:hover {
+  background: #fcfcfc;
+  color: #d04e08;
+}

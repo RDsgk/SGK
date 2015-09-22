@@ -1,0 +1,747 @@
+/* line 20, ../../../app/assets/stylesheets/components/header_bar.scss */
+#task-chain-region .header h1, #task-chain-region .header h2, #task-chain-region .name .container > label {
+  color: #010101;
+  font-weight: 100;
+  padding-left: 12px;
+}
+
+/* line 26, ../../../app/assets/stylesheets/components/header_bar.scss */
+#task-chain-region .header {
+  height: 55px;
+  position: relative;
+  min-width: 1000px;
+  border: 1px solid #e7e7e7;
+  background-image: -moz-linear-gradient(90deg, whitesmoke 0%, #f9f9f9 7%, #fcfcfc 100%);
+  background-image: -webkit-linear-gradient(90deg, whitesmoke 0%, #f9f9f9 7%, #fcfcfc 100%);
+  background-image: -ms-linear-gradient(90deg, whitesmoke 0%, #f9f9f9 7%, #fcfcfc 100%);
+}
+/* line 37, ../../../app/assets/stylesheets/components/header_bar.scss */
+#task-chain-region .header h1 {
+  margin: 0px;
+  font-size: 24px;
+}
+/* line 44, ../../../app/assets/stylesheets/components/header_bar.scss */
+#task-chain-region .header h2 {
+  margin: 0px;
+  color: #a5a5a5;
+  font-size: 12px;
+}
+/* line 53, ../../../app/assets/stylesheets/components/header_bar.scss */
+#task-chain-region .header:after {
+  bottom: -4px;
+  content: " ";
+  display: block;
+  height: 4px;
+  width: 99.9%;
+  left: 1px;
+  position: absolute;
+  margin: 0 auto;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.09);
+}
+/* line 68, ../../../app/assets/stylesheets/components/header_bar.scss */
+#task-chain-region .header > div:first-child {
+  border: 1px solid white;
+  height: 100%;
+}
+
+/* line 74, ../../../app/assets/stylesheets/components/header_bar.scss */
+#task-chain-region #task-chain-content {
+  border: 1px solid #efefef;
+  background-color: #f2f2f2;
+  margin: 0 auto;
+  width: 98%;
+  position: relative;
+}
+/* line 82, ../../../app/assets/stylesheets/components/header_bar.scss */
+#task-chain-region #task-chain-content:after {
+  bottom: -2px;
+  height: 2px;
+  left: 2px;
+  display: block;
+  width: 99.7%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.07);
+  content: " ";
+}
+
+/* line 95, ../../../app/assets/stylesheets/components/header_bar.scss */
+#task-chain-region .content .config {
+  margin: 0 25px 25px 25px;
+  padding: 10px 20px;
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 1px solid #ddd;
+  border-top: 0px;
+  background-color: #fff;
+}
+
+/* line 8, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+body#edit.task_chains #main {
+  background-color: #ffffff;
+}
+/* line 12, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+body#edit.task_chains #task-chain-region > div > div.foundation > div.row, body#edit.task_chains #task-chain-region > div > div.foundation > div.header {
+  float: none;
+}
+
+/*
+  CSS FOR MODAL
+*/
+/* line 22, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.stashed-form-region {
+  display: none;
+}
+/* line 24, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.stashed-form-region input {
+  display: none;
+}
+
+/* line 30, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.spacer {
+  min-height: 15px;
+}
+
+/* line 34, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#modals .modal div.header {
+  padding: 10px 10px;
+}
+
+/* line 39, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.ui-front {
+  z-index: 5;
+}
+
+/* line 45, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.modal .header .close {
+  display: none;
+}
+/* line 50, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.modal .toggle-container {
+  width: 100px;
+  font-size: 15px;
+  position: absolute;
+  top: 16px;
+  right: -10px;
+  display: inline-block;
+}
+/* line 58, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.modal .toggle-container input {
+  float: left;
+}
+/* line 62, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.modal .toggle-container label {
+  font-size: 12px;
+}
+/* line 68, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.modal .schedule-info {
+  margin-left: 30px;
+  margin-top: 40px;
+  min-height: 40px;
+  display: inline-block;
+}
+/* line 75, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.modal .schedule-options {
+  margin-top: 50px;
+}
+/* line 77, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.modal .schedule-options .option {
+  margin-top: 15px;
+  margin-left: 30px;
+  padding-top: 20px;
+}
+/* line 81, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.modal .schedule-options .option label {
+  display: inline-block;
+  float: left;
+  clear: left;
+  width: 100px;
+  text-align: right;
+}
+/* line 87, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.modal .schedule-options .option label.spacer {
+  visibility: hidden;
+}
+/* line 90, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.modal .schedule-options .option label.spacer:before {
+  content: "*";
+}
+/* line 95, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.modal .schedule-options .option input, .modal .schedule-options .option select {
+  display: inline-block;
+  float: left;
+  margin-left: 10px;
+}
+/* line 102, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.modal .schedule-options .option span {
+  float: left;
+  margin-left: 10px;
+}
+/* line 107, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.modal .schedule-options .option.skip-disable {
+  margin-top: 30px;
+}
+/* line 112, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.modal .schedule-options .option .error ~ input {
+  border-color: red;
+  border-style: solid;
+  border-width: thin;
+}
+/* line 118, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.modal .schedule-options .option .hourly {
+  margin-bottom: 20px;
+  position: relative;
+}
+/* line 121, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.modal .schedule-options .option .hourly.minute .error {
+  position: absolute;
+  color: red;
+  top: 20px;
+  left: 217px;
+}
+/* line 131, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.modal .schedule-options .option .interval {
+  position: relative;
+}
+/* line 133, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.modal .schedule-options .option .interval .error {
+  position: absolute;
+  top: 20px;
+  left: 110px;
+  color: red;
+}
+/* line 141, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.modal .schedule-options .option .once, .modal .schedule-options .option .daily, .modal .schedule-options .option .weekly, .modal .schedule-options .option .monthly {
+  position: relative;
+}
+/* line 143, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.modal .schedule-options .option .once.start-date .error, .modal .schedule-options .option .daily.start-date .error, .modal .schedule-options .option .weekly.start-date .error, .modal .schedule-options .option .monthly.start-date .error {
+  position: absolute;
+  top: 20px;
+  left: 110px;
+  color: red;
+  margin-bottom: 20px;
+}
+/* line 151, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.modal .schedule-options .option .once.start-time .error, .modal .schedule-options .option .daily.start-time .error, .modal .schedule-options .option .weekly.start-time .error, .modal .schedule-options .option .monthly.start-time .error {
+  position: absolute;
+  top: 20px;
+  left: 265px;
+  color: red;
+  margin-bottom: 20px;
+}
+/* line 162, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.modal .schedule-options .option .weekdays {
+  position: relative;
+  display: inline-block;
+  margin-left: 10px;
+}
+/* line 167, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.modal .schedule-options .option .weekdays .error {
+  position: absolute;
+  top: 20px;
+  color: red;
+  width: 300px;
+  text-align: left;
+}
+/* line 175, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.modal .schedule-options .option .weekdays label {
+  clear: left;
+  float: none;
+  width: auto;
+  text-align: center;
+}
+/* line 183, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.modal .schedule-options .option .weekdays input {
+  display: none;
+}
+/* line 189, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.modal .schedule-options .option .toggle-button {
+  display: inline-block;
+}
+/* line 195, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.modal .schedule-options .option .disable-project-data {
+  display: none;
+}
+
+/* line 205, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.content.row .hidden-inputs, #task-chain-region .content.header .hidden-inputs {
+  display: none;
+}
+/* line 209, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.content.row .errors, #task-chain-region .content.header .errors {
+  margin-bottom: 0px;
+  display: none;
+}
+/* line 214, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.content.row .vertical-spacer, #task-chain-region .content.header .vertical-spacer {
+  min-height: 600px;
+}
+/* line 218, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.content.row #modules, #task-chain-region .content.header #modules {
+  margin: 20px;
+}
+/* line 224, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.content.row .control-bar, #task-chain-region .content.header .control-bar {
+  display: none;
+}
+/* line 228, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.content.row .advanced-options-container, #task-chain-region .content.header .advanced-options-container {
+  display: none;
+}
+/* line 234, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.content.row .formtastic fieldset.inputs, #task-chain-region .content.header .formtastic fieldset.inputs {
+  border: 0px;
+  box-shadow: none;
+  float: none;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+/* line 243, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.content.row .formtastic fieldset.inputs .collapse, #task-chain-region .content.header .formtastic fieldset.inputs .collapse {
+  display: none;
+}
+/* line 247, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.content.row .formtastic fieldset.inputs ol, #task-chain-region .content.header .formtastic fieldset.inputs ol {
+  padding-top: 15px;
+}
+/* line 251, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.content.row .formtastic fieldset.inputs legend:not(.label), #task-chain-region .content.header .formtastic fieldset.inputs legend:not(.label) {
+  height: 40px;
+  width: 100%;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 40px;
+  border-top: 1px #dcdcdc solid;
+  border-bottom: 1px #dcdcdc solid;
+}
+/* line 260, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.content.row .formtastic fieldset.inputs legend:not(.label) span, #task-chain-region .content.header .formtastic fieldset.inputs legend:not(.label) span {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+/* line 263, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.content.row .formtastic fieldset.inputs legend:not(.label) span:hover, #task-chain-region .content.header .formtastic fieldset.inputs legend:not(.label) span:hover {
+  cursor: pointer;
+}
+/* line 271, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.content.row .formtastic.buttons, #task-chain-region .content.header .formtastic.buttons {
+  visibility: hidden;
+}
+/* line 277, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.content.row .hide-advanced-options, #task-chain-region .content.header .hide-advanced-options, .content.row .show-advanced-options, #task-chain-region .content.header .show-advanced-options {
+  display: none;
+}
+/* line 281, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.content.row .advanced, #task-chain-region .content.header .advanced {
+  display: block;
+}
+/* line 285, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+.content.row #cred-delete-form, #task-chain-region .content.header #cred-delete-form, .content.row h3.authentication-token-details, #task-chain-region .content.header h3.authentication-token-details {
+  width: 95%;
+  margin: 0 auto;
+}
+
+/* line 293, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region {
+  padding-bottom: 20px;
+}
+/* line 296, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .white {
+  background-color: white;
+}
+/* line 300, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .columns.small-12.container {
+  background-color: #f2f2f2;
+}
+/* line 304, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .header {
+  height: 62px;
+}
+/* line 307, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .header:after {
+  visibility: visible;
+}
+/* line 313, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .header .name .error {
+  line-height: 18px;
+  color: red;
+}
+/* line 319, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .header ul {
+  text-align: right;
+}
+/* line 321, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .header ul li {
+  display: inline-block;
+}
+/* line 327, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region #task-chain-content {
+  position: relative;
+}
+/* line 334, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .content .mm-select-container {
+  text-align: right;
+}
+/* line 338, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .content .config {
+  background-color: white;
+  min-height: 400px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  margin: 0 0 25px 0;
+}
+/* line 346, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .content .config .tab-loading {
+  min-height: 400px;
+}
+/* line 351, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .content .config .tabbed-modal .tabs li {
+  z-index: 1;
+}
+/* line 358, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .content .config .metamodule h3 {
+  margin-left: 10px;
+}
+/* line 362, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .content .config .metamodule .file_upload_path {
+  display: inline;
+}
+/* line 367, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .content .config .metamodule #report_name_input {
+  margin-left: 10px;
+}
+/* line 371, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .content .config .metamodule .advanced {
+  margin-top: 20px;
+}
+/* line 376, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .content .config .metamodule .selectable-by-parent {
+  margin-left: 12px;
+}
+/* line 380, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .content .config .metamodule .address_settings .help {
+  left: 126px;
+}
+/* line 384, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .content .config .metamodule .configure_capture label {
+  text-align: left;
+}
+/* line 388, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .content .config .metamodule .email .help {
+  right: 372px;
+}
+/* line 392, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .content .config .metamodule [for=report_excluded_addresses] {
+  width: 100%;
+}
+/* line 398, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .content .config .empty-message {
+  text-align: center;
+}
+/* line 402, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .content .config.container > *:not(.btn) {
+  width: 95%;
+  margin: 0 auto;
+}
+/* line 406, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .content .config.container > .btn {
+  margin-left: 30px;
+}
+/* line 410, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .content .config .tabbed-modal {
+  width: auto !important;
+}
+/* line 413, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .content .config .tabbed-modal .modal-actions, #task-chain-region .content .config .tabbed-modal .close {
+  display: none;
+}
+/* line 424, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .name {
+  height: 54px;
+}
+/* line 427, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .name .container {
+  height: 54px;
+  line-height: 54px;
+}
+/* line 430, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .name .container > label {
+  font-size: 24px;
+  display: inline-block;
+}
+/* line 436, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .name .container .field-container {
+  display: inline-block;
+  height: 28px;
+  vertical-align: middle;
+  display: inline-block;
+}
+/* line 441, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .name .container .field-container input {
+  width: 250px;
+}
+/* line 447, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .name .cancel {
+  line-height: 54px;
+}
+/* line 453, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .schedule-container {
+  display: table;
+  height: 54px;
+}
+/* line 458, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .schedule-state {
+  height: 51px;
+  width: 60px;
+  margin-top: 2px;
+  background-size: 390%;
+  background-image: url(/assets/task_chains/schedule_states.png);
+  background-repeat: no-repeat;
+}
+/* line 466, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .schedule-state.schedule {
+  background-position: 2px;
+}
+/* line 470, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .schedule-state.suspended {
+  background-position: -59px;
+}
+/* line 474, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .schedule-state.recurring {
+  background-position: -118px;
+}
+/* line 478, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .schedule-state.scheduled {
+  background-position: -180px;
+}
+/* line 483, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region a.schedule {
+  /* Not using Line Height Approach b/c height is variable with text */
+  display: table-cell;
+  vertical-align: middle;
+  margin-left: 4px;
+  width: 220px;
+}
+/* line 490, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region a.schedule:hover {
+  cursor: pointer;
+}
+/* line 496, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .actions ul {
+  margin-top: 16px;
+}
+/* line 498, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .actions ul span.btn {
+  border: none;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #5fbbdb), color-stop(100%, #3787a5));
+  background-image: -webkit-linear-gradient(#5fbbdb, #3787a5);
+  background-image: -moz-linear-gradient(#5fbbdb, #3787a5);
+  background-image: -o-linear-gradient(#5fbbdb, #3787a5);
+  background-image: linear-gradient(#5fbbdb, #3787a5);
+  /* IE 9 */
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#5FBBDB', endColorstr='#3787A5');
+  /*For IE7-8-9*/
+}
+/* line 504, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .actions ul span.btn:hover {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #35a9d2), color-stop(100%, #2a687f));
+  background-image: -webkit-linear-gradient(#35a9d2, #2a687f);
+  background-image: -moz-linear-gradient(#35a9d2, #2a687f);
+  background-image: -o-linear-gradient(#35a9d2, #2a687f);
+  background-image: linear-gradient(#35a9d2, #2a687f);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#35a9d2', endColorstr='#2a687f');
+  /*For IE7-8-9*/
+  cursor: pointer;
+}
+/* line 510, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .actions ul span.btn.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+/* line 515, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .actions ul span.btn a {
+  color: white;
+  padding: 0px;
+  margin: 5px 6px 5px 6px;
+  background-image: none;
+}
+/* line 522, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .actions ul span.btn.link {
+  background: white;
+  filter: none;
+  background-image: none;
+}
+/* line 526, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .actions ul span.btn.link a {
+  color: #666666;
+}
+/* line 528, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .actions ul span.btn.link a:hover {
+  text-decoration: underline;
+}
+/* line 537, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .vertical-nav {
+  font-size: 40px;
+  background-color: white;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(50%, #ffffff), color-stop(100%, #e5e5e5));
+  background-image: -webkit-linear-gradient(#ffffff, #ffffff, #e5e5e5);
+  background-image: -moz-linear-gradient(#ffffff, #ffffff, #e5e5e5);
+  background-image: -o-linear-gradient(#ffffff, #ffffff, #e5e5e5);
+  background-image: linear-gradient(#ffffff, #ffffff, #e5e5e5);
+  /* IE 9 */
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr="white", endColorstr="#e5e5e5");
+  /*For IE7-8-9*/
+}
+/* line 544, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .vertical-nav .timeline {
+  position: absolute;
+  width: 95%;
+  margin-top: 30px;
+  z-index: 2;
+}
+/* line 551, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .vertical-nav .timeline-arrow {
+  font-weight: 300;
+  text-align: right;
+  position: absolute;
+  width: 97%;
+  margin-top: 37px;
+  z-index: 2;
+}
+/* line 560, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .vertical-nav .add-task {
+  position: relative;
+  z-index: 5;
+  background-color: #ffffff;
+  line-height: 34px;
+  text-align: center;
+  display: inline-block;
+  margin-top: 31px;
+  vertical-align: top;
+  font-size: 20px;
+  border: dotted 3px;
+  width: 40px;
+  height: 40px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  border-radius: 25px;
+}
+/* line 575, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .vertical-nav .add-task:hover {
+  cursor: pointer;
+  color: #4682b4;
+}
+/* line 580, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .vertical-nav .add-task .add-task-options {
+  display: none;
+  left: -54px;
+  margin-top: 10px;
+  color: grey;
+  position: absolute;
+  width: 150px;
+  text-align: left;
+  background-color: white;
+  border: 1px solid grey;
+}
+/* line 590, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .vertical-nav .add-task .add-task-options ul {
+  text-align: left;
+}
+/* line 592, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .vertical-nav .add-task .add-task-options ul li {
+  margin-left: 4px;
+  display: block;
+}
+/* line 595, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .vertical-nav .add-task .add-task-options ul li:hover {
+  color: #4682b4;
+  cursor: pointer;
+}
+/* line 605, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .vertical-nav .action-container {
+  -webkit-box-shadow: #cccccc 5px 0px 5px 0px;
+  -moz-box-shadow: #cccccc 5px 0px 5px 0px;
+  box-shadow: #cccccc 5px 0px 5px 0px;
+  width: 38px;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+}
+/* line 611, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .vertical-nav .action-container .action {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: #959595;
+  width: 38px;
+  background-image: url(/assets/task_chains/sprite.png);
+  background-repeat: no-repeat;
+}
+/* line 621, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .vertical-nav .action-container .action:hover {
+  background-color: dimgrey;
+  cursor: pointer;
+}
+/* line 626, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .vertical-nav .action-container .action.delete {
+  background-position: 8px 8px;
+}
+/* line 630, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .vertical-nav .action-container .action.clone {
+  background-position: 8px -38px;
+}
+/* line 634, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .vertical-nav .action-container .action.reset {
+  background-position: 8px -82px;
+}
+/* line 644, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .nav.row .chain, #task-chain-region .nav.header .chain {
+  font-size: 12px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+/* line 649, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .nav.row .chain .pie-charts, #task-chain-region .nav.header .chain .pie-charts {
+  float: left;
+}
+/* line 651, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .nav.row .chain .pie-charts .container, #task-chain-region .nav.header .chain .pie-charts .container {
+  display: inline-block;
+}
+/* line 653, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .nav.row .chain .pie-charts .container .generic-stat-wrapper, #task-chain-region .nav.header .chain .pie-charts .container .generic-stat-wrapper {
+  z-index: 5;
+  position: relative;
+  width: 80px;
+  display: inline-block;
+  margin-right: 30px;
+}
+/* line 659, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .nav.row .chain .pie-charts .container .generic-stat-wrapper .task, #task-chain-region .nav.header .chain .pie-charts .container .generic-stat-wrapper .task {
+  text-align: center;
+  width: 80px;
+}
+/* line 663, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .nav.row .chain .pie-charts .container .generic-stat-wrapper canvas, #task-chain-region .nav.header .chain .pie-charts .container .generic-stat-wrapper canvas {
+  vertical-align: middle;
+  float: left;
+}
+/* line 668, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .nav.row .chain .pie-charts .container .generic-stat-wrapper .ui-sortable-placeholder, #task-chain-region .nav.header .chain .pie-charts .container .generic-stat-wrapper .ui-sortable-placeholder {
+  width: 80px;
+}
+/* line 671, ../../../app/assets/stylesheets/task_chains/task_chains.css.scss.erb */
+#task-chain-region .nav.row .chain .pie-charts .container .generic-stat-wrapper:hover, #task-chain-region .nav.header .chain .pie-charts .container .generic-stat-wrapper:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,5 @@
+#monitioMessages { height:32px;position:absolute;top:0px;left:60%;}
+#monitioMessages .message_new {float:left;height:32px;line-height:32px;color:blue;width:80px;}
+#monitioMessages .messages_show {float:left;height:32px;line-height:32px;width:120px;text-align:left;display:hidden;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+#monitioMessages .a_close {float:left;height:32px; line-height:32px;margin-left:10px;}
+#monitioMessages .button_more{float:left;height:32px;line-height:32px;margin-left:10px;}

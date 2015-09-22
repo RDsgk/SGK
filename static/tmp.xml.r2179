@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<pipeline>
+  <name>sir_nutch_and_market</name>
+  <description>
+    <![CDATA[This is SIR pipeline for search apk info from nutch and market]]>
+  </description>
+  <user_id>11</user_id>
+  <type>sir</type>
+  <pu order="1">
+    <template id="21" name="sync_nutch_apk"/>
+    <description><![CDATA[sync apk info by nutch download to pipeline]]></description>
+    <amount min="1" max="1" />
+    <input_table></input_table>
+    <output_table>android_apk</output_table>
+    <config></config>
+    <config_path></config_path>
+  </pu>
+  <pu order="2">
+    <template id="22" name="sync_market_apk"/>
+    <description><![CDATA[sync apk info by market download to pipeline]]></description>
+    <amount min="1" max="1" />
+    <input_table></input_table>
+    <output_table>android_apk</output_table>
+    <config></config>
+    <config_path></config_path>
+  </pu>
+  <pu order="3">
+    <template id="23" name="get_keyword"/>
+    <description><![CDATA[get keyword for apk-meta-crawl]]></description>
+    <amount min="1" max="1" />
+    <input_table>android_apk</input_table>
+    <output_table>sir_keywords</output_table>
+    <config></config>
+    <config_path></config_path>
+  </pu>
+  <pu order="4">
+    <template id="24" name="meta_crawl"/>
+    <description><![CDATA[crawl apk info pages from search-engine]]></description>
+    <amount min="1" max="1" />
+    <input_table>sir_keywords</input_table>
+    <output_table>sir_search_results_app</output_table>
+    <config></config>
+    <config_path></config_path>
+  </pu>
+  <pu order="5">
+    <template id="25" name="filter"/>
+    <description><![CDATA[filter apk info no using]]></description>
+    <amount min="1" max="1" />
+    <input_table>sir_search_results_app</input_table>
+    <output_table>sir_search_results_filtered_app</output_table>
+    <config></config>
+    <config_path></config_path>
+  </pu>
+  <table_sqls>
+    <![CDATA[
+CREATE TABLE IF NOT EXISTS `android_apk` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `apk_md5` varchar(32) DEFAULT NULL,
+  `apk_path` varchar(128) DEFAULT NULL COMMENT 'apk存储的路径',
+  `from_table` varchar(64) DEFAULT NULL,
+  `output_date` datetime DEFAULT CURRENT_TIMESTAMP,
+  `is_processed` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0：url未处理 1：url已处理，但未下载2：已下载',
+  PRIMARY KEY (`id`),
+  KEY `app_md5` (`apk_md5`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+CREATE TABLE IF NOT EXISTS `sir_keywords` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `keyword` varchar(512) COLLATE utf8_unicode_ci NOT NULL,
+  `md5` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `is_processed` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0:没采集, 1:正在采集, 2:采集完成',
+  `output_date` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `net_type` tinyint(3) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+CREATE TABLE IF NOT EXISTS `sir_search_results_app` (
+  `id` bigint(32) unsigned NOT NULL AUTO_INCREMENT,
+  `key_id` bigint(20) unsigned NOT NULL,
+  `ds_id` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `title` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `abstract` varchar(4096) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `url` varchar(1024) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `webpage` varchar(2048) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `index_time` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `classification` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
+  `download_status` tinyint(4) NOT NULL DEFAULT '0',
+  `search_from` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `search_date` datetime DEFAULT NULL,
+  `verify_status` tinyint(4) NOT NULL DEFAULT '0',
+  `verify_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+CREATE TABLE IF NOT EXISTS `sir_search_results_filtered_app` (
+  `id` bigint(32) unsigned NOT NULL AUTO_INCREMENT,
+  `key_id` bigint(20) unsigned NOT NULL,
+  `ds_id` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `title` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `abstract` varchar(4096) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `url` varchar(1024) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `webpage` varchar(2048) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `index_time` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `classification` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
+  `download_status` tinyint(4) NOT NULL DEFAULT '0',
+  `search_from` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `search_date` datetime DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT '0',
+  `output_date` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+CREATE TABLE IF NOT EXISTS `sir_keywords_relation` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `keyword_id_A` bigint(20) unsigned NOT NULL,
+  `keyword_id_B` bigint(20) unsigned NOT NULL,
+  `relation_type` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0:从属关系, 1:同级关系,',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;
+    ]]>
+  </table_sqls>
+</pipeline>
+

@@ -1,0 +1,124 @@
+/* line 2, ../../../app/assets/stylesheets/shared/_pretty_file_inputs.scss */
+li.file.input {
+  position: relative;
+  width: 60%;
+  padding: 0;
+  margin: 10px 0;
+  margin-left: 20%;
+  cursor: pointer;
+}
+/* line 9, ../../../app/assets/stylesheets/shared/_pretty_file_inputs.scss */
+li.file.input.error {
+  margin-bottom: 20px;
+}
+/* line 12, ../../../app/assets/stylesheets/shared/_pretty_file_inputs.scss */
+li.file.input p.inline-error {
+  position: absolute;
+  margin-left: 0;
+}
+/* line 16, ../../../app/assets/stylesheets/shared/_pretty_file_inputs.scss */
+li.file.input label {
+  width: 100%;
+  padding: 6px 7px;
+  border: 1px solid #aaa;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-border-radius: 2px;
+  /* Gecko */
+  -webkit-border-radius: 2px;
+  /* Webkit */
+  -khtml-border-radius: 2px;
+  /* Konqueror */
+  border-radius: 2px;
+  /* CSS3 */
+  -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+/* line 23, ../../../app/assets/stylesheets/shared/_pretty_file_inputs.scss */
+li.file.input label p {
+  margin: 0;
+  font-weight: normal;
+  color: #666;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* line 31, ../../../app/assets/stylesheets/shared/_pretty_file_inputs.scss */
+li.file.input label span {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 30%;
+  padding: 0 5px;
+  line-height: 31px;
+  text-align: center;
+  background: #eee;
+  border: 1px solid #aaa;
+  -moz-border-radius-topleft: 0;
+  /* Gecko */
+  -webkit-border-top-left-radius: 0;
+  /* Webkit */
+  -khtml-border-top-left-radius: 0;
+  /* Konqueror */
+  border-top-left-radius: 0;
+  /* CSS3 */
+  -moz-border-radius-topright: 2px;
+  /* Gecko */
+  -webkit-border-top-right-radius: 2px;
+  /* Webkit */
+  -khtml-border-top-right-radius: 2px;
+  /* Konqueror */
+  border-top-right-radius: 2px;
+  /* CSS3 */
+  -moz-border-radius-bottomright: 0;
+  -webkit-border-bottom-right-radius: 0;
+  /* Webkit */
+  -khtml-border-bottom-right-radius: 0;
+  /* Konqueror */
+  border-bottom-right-radius: 0;
+  /* CSS3 */
+  -moz-border-radius-bottomleft: 2px;
+  /* Gecko */
+  -webkit-border-bottom-left-radius: 2px;
+  /* Webkit */
+  -khtml-border-bottom-left-radius: 2px;
+  /* Konqueror */
+  border-bottom-left-radius: 2px;
+  /* CSS3 */
+  cursor: pointer;
+}
+/* line 46, ../../../app/assets/stylesheets/shared/_pretty_file_inputs.scss */
+li.file.input input[type=file] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100% !important;
+  z-index: 55;
+  cursor: pointer;
+  /* Netscape */
+  -moz-opacity: 0;
+  /* Safari 1.x */
+  -khtml-opacity: 0;
+  /* Good browsers */
+  opacity: 0;
+}
+/* line 54, ../../../app/assets/stylesheets/shared/_pretty_file_inputs.scss */
+li.file.input:hover {
+  -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+/* line 57, ../../../app/assets/stylesheets/shared/_pretty_file_inputs.scss */
+li.file.input:active {
+  -moz-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.2);
+}

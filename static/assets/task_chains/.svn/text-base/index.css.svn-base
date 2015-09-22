@@ -1,0 +1,369 @@
+/* line 20, ../../../app/assets/stylesheets/components/header_bar.scss */
+#task-chains-main-region #task-chain-header-region h1, #task-chains-main-region #task-chain-header-region h2 {
+  color: #010101;
+  font-weight: 100;
+  padding-left: 12px;
+}
+
+/* line 26, ../../../app/assets/stylesheets/components/header_bar.scss */
+#task-chains-main-region #task-chain-header-region {
+  height: 55px;
+  position: relative;
+  min-width: 1000px;
+  border: 1px solid #e7e7e7;
+  background-image: -moz-linear-gradient(90deg, whitesmoke 0%, #f9f9f9 7%, #fcfcfc 100%);
+  background-image: -webkit-linear-gradient(90deg, whitesmoke 0%, #f9f9f9 7%, #fcfcfc 100%);
+  background-image: -ms-linear-gradient(90deg, whitesmoke 0%, #f9f9f9 7%, #fcfcfc 100%);
+}
+/* line 37, ../../../app/assets/stylesheets/components/header_bar.scss */
+#task-chains-main-region #task-chain-header-region h1 {
+  margin: 0px;
+  font-size: 24px;
+}
+/* line 44, ../../../app/assets/stylesheets/components/header_bar.scss */
+#task-chains-main-region #task-chain-header-region h2 {
+  margin: 0px;
+  color: #a5a5a5;
+  font-size: 12px;
+}
+/* line 53, ../../../app/assets/stylesheets/components/header_bar.scss */
+#task-chains-main-region #task-chain-header-region:after {
+  bottom: -4px;
+  content: " ";
+  display: block;
+  height: 4px;
+  width: 99.9%;
+  left: 1px;
+  position: absolute;
+  margin: 0 auto;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.09);
+}
+/* line 68, ../../../app/assets/stylesheets/components/header_bar.scss */
+#task-chains-main-region #task-chain-header-region > div:first-child {
+  border: 1px solid white;
+  height: 100%;
+}
+
+/* line 74, ../../../app/assets/stylesheets/components/header_bar.scss */
+#task-chains-main-region #task-chain-list-region {
+  border: 1px solid #efefef;
+  background-color: #f2f2f2;
+  margin: 0 auto;
+  width: 98%;
+  position: relative;
+}
+/* line 82, ../../../app/assets/stylesheets/components/header_bar.scss */
+#task-chains-main-region #task-chain-list-region:after {
+  bottom: -2px;
+  height: 2px;
+  left: 2px;
+  display: block;
+  width: 99.7%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.07);
+  content: " ";
+}
+
+/* line 95, ../../../app/assets/stylesheets/components/header_bar.scss */
+#task-chains-main-region #task-chain-list-region > div:first-child {
+  margin: 0 25px 25px 25px;
+  padding: 10px 20px;
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 1px solid #ddd;
+  border-top: 0px;
+  background-color: #fff;
+}
+
+/* line 22, ../../../app/assets/stylesheets/components/buttons.scss */
+#task-chains-main-region #task-chain-list-region .toolbar a {
+  display: inline-block;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  height: 20px;
+  line-height: 20px;
+  min-width: 70px;
+  margin-right: 5px;
+  text-align: center;
+  font-size: 10px;
+  color: #4d4d4d;
+  border: 1px solid #b3b3b3;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fcfcfc), color-stop(1, #e7e7e7));
+  background-image: -o-linear-gradient(bottom, #fcfcfc 0%, #e7e7e7 100%);
+  background-image: -moz-linear-gradient(bottom, #fcfcfc 0%, #e7e7e7 100%);
+  background-image: -webkit-linear-gradient(bottom, #fcfcfc 0%, #e7e7e7 100%);
+  background-image: -ms-linear-gradient(bottom, #fcfcfc 0%, #e7e7e7 100%);
+  background-image: linear-gradient(to bottom, #fcfcfc 0%, #e7e7e7 100%);
+}
+/* line 36, ../../../app/assets/stylesheets/components/buttons.scss */
+#task-chains-main-region #task-chain-list-region .toolbar a:hover {
+  text-decoration: none;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f0f0f0), color-stop(1, #e6e6e6));
+  background-image: -o-linear-gradient(bottom, #f0f0f0 0%, #e6e6e6 100%);
+  background-image: -moz-linear-gradient(bottom, #f0f0f0 0%, #e6e6e6 100%);
+  background-image: -webkit-linear-gradient(bottom, #f0f0f0 0%, #e6e6e6 100%);
+  background-image: -ms-linear-gradient(bottom, #f0f0f0 0%, #e6e6e6 100%);
+  background-image: linear-gradient(to bottom, #f0f0f0 0%, #e6e6e6 100%);
+  cursor: pointer;
+}
+/* line 42, ../../../app/assets/stylesheets/components/buttons.scss */
+#task-chains-main-region #task-chain-list-region .toolbar a.disabled {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  opacity: 0.4;
+}
+/* line 46, ../../../app/assets/stylesheets/components/buttons.scss */
+#task-chains-main-region #task-chain-list-region .toolbar a.disabled:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fcfcfc), color-stop(1, #e7e7e7));
+  background-image: -o-linear-gradient(bottom, #fcfcfc 0%, #e7e7e7 100%);
+  background-image: -moz-linear-gradient(bottom, #fcfcfc 0%, #e7e7e7 100%);
+  background-image: -webkit-linear-gradient(bottom, #fcfcfc 0%, #e7e7e7 100%);
+  background-image: -ms-linear-gradient(bottom, #fcfcfc 0%, #e7e7e7 100%);
+  background-image: linear-gradient(to bottom, #fcfcfc 0%, #e7e7e7 100%);
+  cursor: default;
+}
+
+/* line 54, ../../../app/assets/stylesheets/components/buttons.scss */
+#task-chains-main-region #task-chain-list-region .toolbar a#new {
+  padding: 0 10px;
+  color: #e8e8e8;
+  background-image: -moz-linear-gradient(90deg, #5d9a29 0%, #65b201 100%);
+  background-image: -webkit-linear-gradient(90deg, #5d9a29 0%, #65b201 100%);
+  background-image: -ms-linear-gradient(90deg, #5d9a29 0%, #65b201 100%);
+}
+
+/* line 3, ../../../app/assets/stylesheets/components/circle_icons.scss */
+#task-chains-main-region #task-chain-list-region table tbody tr td.schedule .schedule-wrapper .unscheduled::after, #task-chains-main-region #task-chain-list-region table tbody tr td.schedule .schedule-wrapper .running::after, #task-chains-main-region #task-chain-list-region table tbody tr td.schedule .schedule-wrapper .once::after, #task-chains-main-region #task-chain-list-region table tbody tr td.schedule .schedule-wrapper .suspended::after, #task-chains-main-region #task-chain-list-region table tbody tr td.schedule .schedule-wrapper .scheduled::after {
+  display: block;
+  height: 10px;
+  line-height: 10px;
+  width: 10px;
+  text-align: center;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+}
+
+/* line 16, ../../../app/assets/stylesheets/components/circle_icons.scss */
+#task-chains-main-region #task-chain-list-region table tbody tr td.schedule .schedule-wrapper .unscheduled::after, #task-chains-main-region #task-chain-list-region table tbody tr td.schedule .schedule-wrapper .running::after {
+  background-color: #cdcdcd;
+  border: 1px solid #b1b1b1;
+}
+
+/* line 22, ../../../app/assets/stylesheets/components/circle_icons.scss */
+#task-chains-main-region #task-chain-list-region table tbody tr td.schedule .schedule-wrapper .once::after {
+  background-color: #97cc55;
+  border: 1px solid #7ba645;
+  color: #fff;
+}
+
+/* line 29, ../../../app/assets/stylesheets/components/circle_icons.scss */
+#task-chains-main-region #task-chain-list-region table tbody tr td.schedule .schedule-wrapper .suspended::after {
+  background-color: #c91114;
+  border: 1px solid #9f0b12;
+  color: #fff;
+}
+
+/* line 36, ../../../app/assets/stylesheets/components/circle_icons.scss */
+#task-chains-main-region #task-chain-list-region table tbody tr td.schedule .schedule-wrapper .scheduled::after {
+  background-color: #1278cc;
+  border: 1px solid #216397;
+  color: #fff;
+}
+
+/* line 47, ../../../app/assets/stylesheets/components/circle_icons.scss */
+#task-chains-main-region #task-chain-list-region table tbody tr td.schedule .schedule-wrapper .unscheduled::after, #task-chains-main-region #task-chain-list-region table tbody tr td.schedule .schedule-wrapper .running::after {
+  content: '+';
+}
+
+/* line 51, ../../../app/assets/stylesheets/components/circle_icons.scss */
+#task-chains-main-region #task-chain-list-region table tbody tr td.schedule .schedule-wrapper .suspended::after {
+  content: '\2014';
+  font-size: 9px;
+}
+
+/* line 56, ../../../app/assets/stylesheets/components/circle_icons.scss */
+#task-chains-main-region #task-chain-list-region table tbody tr td.schedule .schedule-wrapper .once::after {
+  content: '\2713';
+  font-size: 9px;
+}
+
+/* line 61, ../../../app/assets/stylesheets/components/circle_icons.scss */
+#task-chains-main-region #task-chain-list-region table tbody tr td.schedule .schedule-wrapper .scheduled::after {
+  content: '\27F3';
+  font-size: 9px;
+  padding-left: 1px;
+}
+
+/* line 16, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+#task-chains-main-region {
+  color: #010101;
+}
+/* line 26, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+#task-chains-main-region #task-chain-header-region h1 {
+  line-height: 55px;
+}
+/* line 43, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+#task-chains-main-region #task-chain-list-region .toolbar {
+  position: relative;
+}
+/* line 55, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+#task-chains-main-region #task-chain-list-region #selected-indicator {
+  color: #8e8e8e;
+  font-size: 11px;
+  margin: 5px 28px;
+}
+/* line 61, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+#task-chains-main-region #task-chain-list-region table {
+  width: 100%;
+}
+/* line 64, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+#task-chains-main-region #task-chain-list-region table td.checkbox, #task-chains-main-region #task-chain-list-region table th#select-all {
+  padding: 0 0 0 25px;
+  width: 20px;
+}
+/* line 69, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+#task-chains-main-region #task-chain-list-region table td.schedule, #task-chains-main-region #task-chain-list-region table th.schedule {
+  width: 110px;
+  text-align: center;
+}
+/* line 74, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+#task-chains-main-region #task-chain-list-region table td.tasks, #task-chains-main-region #task-chain-list-region table th.tasks {
+  width: 260px;
+}
+/* line 79, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+#task-chains-main-region #task-chain-list-region table td.history a.error {
+  color: red;
+}
+/* line 84, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+#task-chains-main-region #task-chain-list-region table td.status {
+  width: 150px;
+}
+/* line 88, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+#task-chains-main-region #task-chain-list-region table thead {
+  background-color: #e1e1e1;
+  text-transform: uppercase;
+}
+/* line 92, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+#task-chains-main-region #task-chain-list-region table thead tr {
+  height: 30px;
+}
+/* line 95, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+#task-chains-main-region #task-chain-list-region table thead tr th {
+  font-size: 13px;
+  color: #010101;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+/* line 100, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+#task-chains-main-region #task-chain-list-region table thead tr th.sortable:hover {
+  cursor: pointer;
+}
+/* line 104, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+#task-chains-main-region #task-chain-list-region table thead tr th .arrow {
+  display: inline-block;
+  margin-left: 5px;
+  margin-bottom: 3px;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+/* line 117, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+#task-chains-main-region #task-chain-list-region table thead tr th .arrow.up {
+  width: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid #ea5709;
+  border-top: none;
+}
+/* line 125, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+#task-chains-main-region #task-chain-list-region table thead tr th .arrow.down {
+  width: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #ea5709;
+  border-bottom: none;
+}
+/* line 138, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+#task-chains-main-region #task-chain-list-region table tbody tr {
+  border-top: 10px solid white;
+}
+/* line 141, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+#task-chains-main-region #task-chain-list-region table tbody tr td {
+  height: 55px;
+  background-color: #f2f2f2;
+}
+/* line 147, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+#task-chains-main-region #task-chain-list-region table tbody tr td.schedule .schedule-wrapper {
+  position: relative;
+}
+/* line 150, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+#task-chains-main-region #task-chain-list-region table tbody tr td.schedule .schedule-wrapper .no-schedule, #task-chains-main-region #task-chain-list-region table tbody tr td.schedule .schedule-wrapper .schedule {
+  height: 33px;
+  width: 32px;
+  margin: 0 auto;
+  background-image: url(/assets/task_chains/clock.png);
+}
+@media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+  /* line 150, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+  #task-chains-main-region #task-chain-list-region table tbody tr td.schedule .schedule-wrapper .no-schedule, #task-chains-main-region #task-chain-list-region table tbody tr td.schedule .schedule-wrapper .schedule {
+    /* on retina, use image that's scaled by 2 */
+    background-image: url("/assets/task_chains/clock@2x.png");
+    background-size: 32px 33px;
+  }
+}
+/* line 158, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+#task-chains-main-region #task-chain-list-region table tbody tr td.schedule .schedule-wrapper .no-schedule {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+/* line 162, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+#task-chains-main-region #task-chain-list-region table tbody tr td.schedule .schedule-wrapper div::after {
+  position: absolute;
+  top: 26px;
+  right: 39px;
+}
+/* line 190, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+#task-chains-main-region #task-chain-list-region table tbody tr td.name {
+  font-size: 18px;
+  font-weight: 100;
+}
+/* line 194, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+#task-chains-main-region #task-chain-list-region table tbody tr td.name a {
+  color: #010101;
+  text-decoration: none;
+}
+/* line 198, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+#task-chains-main-region #task-chain-list-region table tbody tr td.name a:hover {
+  text-decoration: underline;
+}
+/* line 204, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+#task-chains-main-region #task-chain-list-region table tbody tr td.tasks {
+  text-transform: uppercase;
+}
+/* line 209, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+#task-chains-main-region #task-chain-list-region table tbody tr td.status canvas {
+  float: left;
+  margin-left: 15px;
+}
+/* line 214, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+#task-chains-main-region #task-chain-list-region table tbody tr td.status .task-info {
+  float: right;
+  width: 50%;
+  margin-top: 3px;
+}
+/* line 220, ../../../app/assets/stylesheets/task_chains/index.css.scss */
+#task-chains-main-region #task-chain-list-region table tbody tr td.status a[href='javascript:void(0)'] {
+  text-decoration: none;
+}

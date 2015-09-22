@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<title>VARAS</title>
+<link href="/static/assets/css/application.css" media="screen" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/static/assets/css/style.css" media="screen" type="text/css" />
+
+<script src="/static/assets/js/jquery-1.6.2.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="/static/assets/js/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="/static/saweb/css/messages.css" />
+
+</head>
+<body id="index" class="workspaces">
+<div id='appWrap'>
+  <div class='side-borders'>
+    <div id="popup" style="display: none">
+      <div class="overlay" id="popup_overlay"></div>
+      <div class="window">
+        <div class="title_bar" id="popup_title">[Title]</div>
+        <div class="content" id="popup_content">[Content]</div>
+      </div>
+    </div>
+    <div id="header">
+      <div id="header-top-border"></div>
+      <!--a href="/" id="logo-wrap"><img style="width:198px; height:50px;" alt="Varas SAWeb" src="/static/saweb/images/logo.png" /></a--!>
+      <div id="top-menu">
+        <ul class="drop-menu" style='float:right'>
+          <li class="globalsearch">
+          <li class="menu" id="account-menu-wrapper"> <a href="#" class="menu-title" id="account-menu">{{ username }}<span style="display:none;" id="username111">{{ username }}</span><small>▼</small></a>
+            <ul class="sub-menu">
+              <li><a href="/logout/" id="logout-link">退出</a></li>
+            </ul>
+          </li>
+          <li class="menu"> <a href="#" class="menu-title help-link">?</a>
+            <ul class="sub-menu">
+              <li> <a href="#" target="_support" title="Varas Community" class="support-link">Community</a> </li>
+              <li> <a href="#" target="_support" title="Varas Help" class='help-item'>Help</a> </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="drop-menu menu-left">
+<!--form name=form1 method=post action="/sir/show-search-list/5">
+          <li class="globalsearch">
+            <input id="globalsearch" name="keyword" style="float: none; margin:0 0 0 50px" tabindex="1" title="Search" type="text" value="" placeholder="安全信息检索">
+          </li>
+          <li id="button_p">
+            <input id="button_s" type="submit" style="float:none; margin:0 0 0 10px" src="/static/assets/images/search.gif"/>
+</form--!>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="workspace_nav">
+      <ul class="nav_tabs" id="nav_tabs">
+        <!--此处添加二级菜单-->
+	<li class="groupwork"><a href="/statistic"> <span class="tab">一周查询次数统计</span> </a></li>
+        <li class="workflow"><a href="/date_info"> <span class="tab">数据总体信息</span> </a></li>
+        <li class="sfdropdown"> <a href="/server_status"> <span class="tab">服务器状态</span> </a> </li>
+	<li class="kibana"><a href="http://10.10.20.26:5601"><span class="tab">kibana</span></a></li>
+     </ul>
+	<div id="monitioMessages"></div>
+    </div>
+
+    <!--顶部菜单导航结束--> 
+    <!--二级菜单导航-->
+   
+    <!--顶部结束--> 
+    
+    <!--此处开始添加模块--> 
+    
+    {% include tplfile %} 
+    
+    <!--模板结束--> 
+    <!--底部-->
+   
+<script type="text/javascript">
+$(document).ready(function(){
+   // message_show();
+ // setInterval(message_show,5000);
+})
+function message_show(){
+    $.ajaxSetup({cache:false});
+    var monitioMessages = $('#monitioMessages');
+    monitioMessages.empty();
+    var username = $('#username111').text();
+    $.get("/groupwork/get_messages",{username:username},function(data){
+	json_data = JSON.parse(data);
+	if(json_data.length != 0){
+	    var new_message = "<div class='message_new'>最新消息：</div>";
+	    var messages = "<div class='messages_show'>" + json_data[json_data.length - 1].message  +"</div>";
+            var a_close = "<a  href='javascript:void(0);' class='a_close' onclick='close_message(" + json_data[json_data.length - 1].id + ")'>标记已读</a>"
+	    var button_more = "<a class='button_more' href='/groupwork/allmessages/'>更多</a>";
+	    monitioMessages.append(new_message);
+            monitioMessages.append(messages);
+            monitioMessages.append(a_close);
+	    monitioMessages.append(button_more);    
+	
+	}else{
+		monitioMessages.empty();
+	}
+	
+    })
+}
+function close_message(id){
+    var url = "/groupwork/mark_read/" + id ;
+    $.get(url,function(data){
+    message_show();
+    })
+}
+</script>
+
+
+
+
+ 
+            
+<!-- <script type="text/javascript" src="/static/js/jquery-1.11.1.min.js"></script>  -->
+<script type="text/javascript">
+currentActive("nav_tabs","current-active");
+function currentActive(navId,curClass){
+var navId=document.getElementById(navId);
+var liId=document.getElementsByTagName("li");
+var links=navId.getElementsByTagName("a");
+var currentLink=window.location.href;
+var str="";
+str = currentLink.split(/\//)[3];
+//str = currentLink.split(/\//)[4];
+if (str.indexOf("workflow") != -1) {
+    $('.workflow').addClass('sel');
+}else{
+    if (str=="sf"){
+        $(".sf").addClass('sel');
+    }else{
+        if(str=="asa"){
+            $(".asa").addClass('sel')
+        }else{
+ 	    if(str=='groupwork'){
+		$(".groupwork").addClass('sel')
+	 } else{
+            if(str=="sir"){
+                $(".sir").addClass('sel')
+            }else{
+                if((str=="vul") || (str=="software") || (str=="sample")){
+                    $(".vdata").addClass('sel')
+                }else{
+		    if (str=='main'){
+			$('.workflow').addClass('sel');
+		    }
+			else{
+                    $(".custom").addClass('sel');}
+                }
+            }
+        }
+    }
+}
+}
+}</script>
+    <div class="clearfix"></div>
+  </div>
+</div>
+</div>
+</div>
+<div id="footer" class="clearfix max-width">
+  <div class="productby"> </div>
+  <div class="version"> SGK 1.0 - Update 20150918 </div>
+  <div class="copyright"> © 2014 | <a href="#" id="support-link" target="_support">IIE-RD6</a> </div>
+</div>
+</div>
+</div>
+<div id="modals" class="empty"></div>
+</body>
+</html>

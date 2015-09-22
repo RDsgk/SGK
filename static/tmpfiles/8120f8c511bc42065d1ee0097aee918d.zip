@@ -1,0 +1,56 @@
+id:
+	39
+vul_name:
+	一种基于Auth CSRF的CSRF+XSS新型蠕虫攻击风险
+vul_type:
+	Web
+trigger_point:
+	None
+varas_type:
+	None
+exploit_result:
+	None
+exploit_condition:
+	None
+exploit_poc:
+	None
+submit_time:
+	None
+vul_level:
+	high
+relate_vendor:
+	阿里嗨淘
+public_id:
+	None
+vul_description:
+	None
+refurl:
+	http://security.alibaba.com/leak/detail.htm?spm=0.0.0.0.qYs1L9&id=3842
+solved_method:
+	None
+vendor_patch:
+	None
+vendor_confirm_info:
+	None
+vendor_confirm_level:
+	None
+vendor_confirm_url:
+	None
+vendor_confirm_name:
+	None
+vendor_confirm_time:
+	None
+vul_author:
+	rainow
+vul_status:
+	2
+video:
+	None
+verify_author:
+	yulei
+verify_date:
+	None
+verify_info:
+	None
+rank:
+	0
