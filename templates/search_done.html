@@ -22,14 +22,16 @@
  <fieldset  class="inputs" style=" box-shadow: 3px 3px 4px #dddddd;width: 95%;margin: 0 auto;margin-top: 15px;
 margin-bottom: 10px;background-color: #fff;padding: 5px 20px; ">
  <legend style="font-size: 16px;font-weight: bold;color: #000;">搜索结果列表</legend>
-                  <ol  style="width:auto; padding-left:10%">
+                  <ol  style="width:70%; padding-left:7%">
 <div  id="known_targets"  style="width: 95%; float: left;">
-                    <table  width="100%"  class="list mar-tb10">
+                    <table  width="80%"  class="list mar-tb10">
                       <thead>
                         <tr>
                           <th>用户名</th>
                           <th>邮箱</th>
                           <th>密码</th>
+			</tr>
+		     </thead>
                       <tbody  id="vhost_list">
 
                       {% for item in list %}
@@ -37,11 +39,30 @@ margin-bottom: 10px;background-color: #fff;padding: 5px 20px; ">
                         <td align="center"  valign="top">{{ item.username }}</td>
                         <td align="center"  valign="top">{{ item.email }}</td>
                         <td align="center"  valign="top">{{ item.password }}</td>
+		      </tr>
+                      {% endfor %}
+                        </tbody>
+
+                    </table>
+	<table  width="10%"  class="list mar-tb10">
+                      <thead>
+                        <tr>
+                          <th>来源</th>
+                        </tr>
+                     </thead>
+                      <tbody  id="vhost_list">
+
+                      {% for item in source_list %}
+                      <tr  class="odd">
+                        <td align="center"  valign="top">{{ item }}</td>
                       </tr>
                       {% endfor %}
                         </tbody>
 
                     </table>
+
+
+
                   </div>
 </ol>
                 </fieldset>

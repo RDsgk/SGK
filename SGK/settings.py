@@ -60,7 +60,7 @@ TEMPLATE_DIRS = (
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/guoxiaoyu/SGK/templates/',],
+        'DIRS': ['/home/zhouhuan/gitproject/SGK/SGK/templates/',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -105,7 +105,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 STATICFILES_DIRS = ( 
     os.path.join(BASE_DIR, "/static"),
-    '/home/guoxiaoyu/SGK/static/'
+    '/home/zhouhuan/gitproject/SGK/SGK/static'
 )
 
 STATIC_URL = '/static/'
