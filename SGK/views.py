@@ -57,7 +57,7 @@ def search(request):
     #调用es-py API 根据用户名密码查询，限制查询条数<50
     print text
     #定义查询类型,从前台页面获取
-    querytype = 'email'
+    querytype = 'username'
     print type(querytype)
     if querytype == 'username':
    	 #基于用户名查询
