@@ -21,14 +21,14 @@ def mainpage(request):
     b=search_count.objects.filter(date=a).order_by('-id')[:10] 
     #判断用户登陆状态
     if request.user in user_list:
-	return render_to_response("main.html", {"tplfile":"search.html", "username": request.user,"record":b})
+	return render_to_response("newmainpage.html", {"tplfile":"newsearch.html", "username": request.user,"record":b})
     else:
-        return render_to_response('login.html', {})
+        return render_to_response('brandnewlogin.html', {})
 
 #用户退出
 def log_out(requset):
     logout(requset)
-    return render_to_response('login.html', {})
+    return render_to_response('brandnewlogin.html', {})
 
 #用户登录
 def log(request):
@@ -41,13 +41,13 @@ def log(request):
     b=search_count.objects.filter(date=a).order_by('-id')[:10]
     if user is None:
 	if not request.user.is_active:
-	    return render_to_response('login.html', {})
+	    return render_to_response('brandnewlogin.html', {})
 	else:
 	    user=request.user
-	    return render_to_response("main.html", {"tplfile":"search.html", "username": request.user,"record":b})
+	    return render_to_response("newmainpage.html", {"tplfile":"newsearch.html", "username": request.user,"record":b})
     elif user.is_active:
 	login(request,user)
-  	return render_to_response("main.html", {"tplfile":"search.html", "username": user_name,"record":b})
+  	return render_to_response("newmainpage.html", {"tplfile":"newsearch.html", "username": user_name,"record":b})
 #搜索
 def search(request):
     #获取查询关键字
@@ -57,15 +57,15 @@ def search(request):
     #调用es-py API 根据用户名密码查询，限制查询条数<50
     print text
     #定义查询类型,从前台页面获取
-    querytype = 'username'
-    print type(querytype)
-    if querytype == 'username':
+    querytype = request.POST.get('way')
+    print querytype
+    if querytype == 'username' or querytype == 'none':
    	 #基于用户名查询
    	 searchResult = es.search(index='_all',body={"query":{"term":{'username':text}},"size":50})
     elif querytype == 'email':
    	 #基于邮箱查询
    	 searchResult = es.search(index='_all',body={"query":{"term":{'email':text}},"size":50})
-    elif querytype == 'password':
+    elif querytype == 'passwd':
    	 #基于密码查询  
    	 searchResult = es.search(index='_all',body={"query":{"term":{'password':text}},"size":50})
    # elif querytype == 'multi':
@@ -82,7 +82,10 @@ def search(request):
     b=a['hits']
     for i in range( len(b)):
  	c=b[i]['_source']
+        print(c)
 	t=b[i]['_index']
+        print(t)
+        print '************************'
 	search_list.append(c)
 	collection_list.append(t)
     #获取数据源
@@ -93,13 +96,16 @@ def search(request):
 	for j in range( len(deal2)):
 		deal3 = deal2[j]['_source']
 		deal4 = deal3['source']
-		print(deal4)
 		source_list.append(deal4)
+    #获取查询总条数
+    total = a['total']
+    #获取查询时间
+    took = searchResult['took']
 	
     ccc=search_count(user=request.user,content=text)
     ccc.save()
     #返回查询结果和数据源信息
-    return render_to_response("main.html",{"tplfile":"search_done.html","username":request.user,"list":search_list,"source_list":source_list})
+    return render_to_response("newmainpage.html",{"tplfile":"newsearchresult.html","username":request.user,"list":search_list,"source_list":source_list,"total":total,"took":took})
 
 #统计信息
 @login_required
@@ -108,6 +114,7 @@ def statistic(request):
     '''
     a=search_count.objects.values('date').annotate(dcount=Count('date'))
     print "test"
+
     print a[0]['date'].isoformat()
     count_list=[]
     interval=7
@@ -121,7 +128,7 @@ def statistic(request):
 	count_list.append(item)
     date=[{'count_data':count_list}]
     '''
-    return render_to_response("main.html",{"tplfile":"statistics.html","username":request.user})
+    return render_to_response("newmainpage.html",{"tplfile":"newstatistics.html","username":request.user})
 
 def cccc(request):
     a=search_count.objects.values('date').annotate(dcount=Count('date'))
@@ -147,7 +154,7 @@ def date_info(request):
     #SGK内部数据信息
     infoInSGK = {'51CTO':'3168270','暴风BBS':'625867','17173':'16765965','test':'8923823'}
     print type(infoInSGK)
-    return render_to_response("main.html",{"tplfile":"date_info.html","username":request.user})
+    return render_to_response("newmainpage.html",{"tplfile":"newdatainfo.html","username":request.user})
 
 #服务器信息
 @login_required
@@ -178,4 +185,4 @@ def server_status(request):
 		meminfo[line.split(':')[0]] = line.split(':')[1].strip()
     memtargetinfo = [meminfo['MemTotal'],meminfo['MemAvailable'],meminfo['MemFree']]
     print(memtargetinfo)
-    return render_to_response("main.html", {"tplfile":"server_status.html", "username":request.user,'sysinfo':sysinfo,'esClusterInfo':esClusterInfo,'cpuName':cpuName,'memtargetinfo':memtargetinfo})
+    return render_to_response("newmainpage.html", {"tplfile":"server_status.html", "username":request.user,'sysinfo':sysinfo,'esClusterInfo':esClusterInfo,'cpuName':cpuName,'memtargetinfo':memtargetinfo})
