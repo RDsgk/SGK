@@ -14,45 +14,9 @@ $(document).ready(function(){
         $(this).css("background-color", colors[i % 2]);
     });
 });
-</script>
-
-    <!--此处开始添加模块-->
-<div  id="main"  class="clearfix">
-      <div  class="mainPad">
-        <div  id="top-strip"></div>
-        <div  id="content">
-          <div  class="body-disabled-overlay invisible"> <span  class="invisible registration-url">/licenses</span>
-            <div  class="container"> </div>
-          </div>
-          <div  class="float-Rt"> </div>
-          <div  id="crumbHolder"  class="clearfix">
-            <div  id="breadcrumb"  class="clearfix"> <a  href="/">SGK</a><a  href="/"><span  class="last"><a href="#">搜索次数统计</a></span> </div>
-          </div>
-          <div  class="mainContent">
-            <div  id="flash_messages"> </div>
-              <div  style="margin:0;padding:0;display:inline"> </div>
-              <div  id="popup_errors"></div>
-              <div  class="one_col_with_sidebar">
-        <form name="theForm" method="POST" action="/cm/monitor-refresh/"    class="formtastic webscan_task"  novalidate="novalidate">
-              <fieldset  class="inputs">
-              <input type=hidden name=control_time id=control_time_id value={{ control_time }} >
-              <input type=hidden name=network_time id=network_time_id value={{ network_time }} >
-                <legend><span>一周查询次数统计</span></legend>
-                <ol>
-        </form>
-
-     <a  href="#"  class="help"  data-field="webscan_tasks_known_targets_input"  style="float: right;"  target="_blank"></a>
-                </ol>
-        
-
-<div id="line"  style="width:70%;height:400px;border:1px solid#cccccc;float:left;margin-left:15%">
-</div>
-              </fieldset>
-          </div>
-        </div>
-      </div>
-    </div>
-
+</script>    
+<div  id="breadcrumb"  class="clearfix"> <a  href="/">SGK</a><a  href="/"><span  class="last"><a href="#">搜索次数统计</a></span> </div>
+   
 <script src="/static/js/highcharts.js"></script>
 <script src="/static/js/highcharts-3d.js"></script>
 <script src="/static/js/exporting.js"></script>
@@ -239,15 +203,7 @@ optionstatus = {
         name: '占比',
         data: [
         ['安智市场',   10.45],
-        ['木蚂蚁软件市场',       11.49],
-        ['机锋市场',       17.25],
-        ['乐商店',    10.11],
-        ['16软件市场',     6.55],
-        ['安粉网',     6.32],
-        ['其他',   37.83]
-        ]
-    }]
-};
+        ['木蚂蚁软件市场',  
 
 optionapi = {
     chart: {

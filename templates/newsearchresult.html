@@ -1,0 +1,42 @@
+<div style="float:left;width:100%">
+<div style="float:left;margin-left:4%"><p style="float:left" ><font size="4" style="font-weight:bold;">搜索结果总数：</font></p><p style="float:left"><font size="4" style="font-weight:bold;">{{total}}</font></p></div>
+<div style="float:left;margin-left:4%"><p style="float:left"><font size="4" style="font-weight:bold;">搜索用时：</font></p><p style="float:left"><font size="4" style="font-weight:bold;">{{took}}ms</font></p></div>
+</div>
+<div  id="known_targets"  style="width: 95%; float: left;margin-left:4%">
+
+                    <table  style="width:70%;float:left">
+                      <thead>
+                        <tr>
+                          <th>用户名</th>
+                          <th>邮箱</th>
+                          <th>密码</th>
+                      <tbody  id="vhost_list">
+
+                      {% for item in list %}
+                      <tr  class="odd" style="border-bottom:1px solid#cccccc">
+                        <td align="center"  valign="top" style="height:25px;border-bottom:1px solid#bebebe">{{ item.username }}</td>
+                        <td align="center"  valign="top" style="height:25px;border-bottom:1px solid#bebebe">{{ item.email }}</td>
+                        {% if item.password != None %}
+
+                        <td align="center"  valign="top" style="height:25px;border-bottom:1px solid#bebebe">{{ item.password }}</td>
+                        {% else %}
+                        <td align="center"  valign="top" style="height:25px;border-bottom:1px solid#bebebe">{{ item.passwordplaintext }}</td>
+                        {% endif %}
+		     {%endfor%}
+                      </tr>
+                        </tbody>
+
+                    </table>
+		<table  style="width:28%;float:left">
+		<thead>
+		<tr>
+		<th>来源</th>
+		<tbody id="test">
+		{%for item in source_list%}
+		<tr class='odd'>
+		<td align="center" valign="top" style="height:25px;border-bottom:1px solid#bebebe">{{item}}</td>
+		{%endfor %}
+		</tr>
+		</tbody>
+		</table>
+                  </div>

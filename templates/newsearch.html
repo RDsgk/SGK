@@ -1,0 +1,113 @@
+<link type="text/css" href="../static/newtable/css/BarChart.css" rel="stylesheet" />
+<script language="javascript" type="text/javascript" src="../static/newtable/js/jit.js"></script>
+<script language="javascript" type="text/javascript" src="../static/newtable/js/sgkTotalinformation.js"></script>
+
+<style type="text/css">
+#headerwrap input[type=text] {
+    background: rgba(227, 231, 228, 1);
+    font-family: sans-serif,serif,'Open Sans', sans serif;
+    font-size: 1.3125em;
+    border: 0;
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom:0 !important;
+}
+#headerwrap input[type=text]:focus {
+    background: #43413e;
+    color: #eff1ef;
+    transition: background 0.25 ease-in;
+    -moz-transition: background 0.25 ease-in;
+    -webkit-transition: background 0.25 ease-in;
+}
+#headerwrap input[type=text] {
+    height: 3.5em;
+    width:50%;
+}
+.selectbox {
+    background: #43413e;
+    color:gray;
+    border: 0;
+    height: 3.5em;
+    width:5em;
+}
+#headerwrap input[type=submit] {
+    font-family: 'Patua One', cursive;
+    color: #fff;
+    width: 185px;
+    height: 3em;
+    font-size: 1.3125em; /* 21px */
+    padding:0.5em;
+    letter-spacing: 0.05em;
+    margin: 0;
+    border: 0;
+    text-transform: none;
+    background: #43413e !important;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+#headerwrap input[type=submit]:hover, #headerwrap input[type=submit]:active {
+    background: black !important;
+}
+
+#center-container {
+    margin:50px auto 50px auto;
+}
+
+
+#infovis {
+    position:relative;
+    width:100%;
+    height:500px;
+    margin:auto;
+    overflow:hidden;
+}
+</style>
+<!--
+<div id="search">
+    <form id='search' method="post" action="/search_done" style="margin-top:5%">
+
+        <input id='search_content' type='text' name="search_content" >
+        <input type='submit' id='submit' value="搜索">
+    </form>
+</div>
+-->
+<div id="headerwrap">
+      <header class="clearfix">
+            <form id='search' method="post" action="/search_done" style="margin-top:5%">  
+            <input type="text" name="search_content" placeholder="username,password,email..." class="cform-text" size="40" title="关键字"> 
+            <select class="selectbox" id="way" name="way" form='search'>
+            <option value="none">user</option>
+            <option value="passwd">密码</option>
+            <option value="email">邮箱</option>
+            </select>    
+            <input type="submit" value="查询" class="cform-submit">
+            </form>  
+      </header>
+</div>
+
+<div id="center-container">
+    <div id="infovis"></div>    
+</div>
+
+<div style="border-top:1px solid #CDC5BF;border-bottom:1px solid #CDC5BF;margin:20px auto 50px auto;width:80%">
+    <h2 style="margin-top:10px;text-align:left">搜索历史</h2>
+<div style="margin-left:200px;margin-top:20px;margin-bottom:20px;width=80%;color:#F0F0F0;font-family:Arial,Cursive">
+  
+    <table style="width:70%">
+        <thead>
+            <tr style="border-bottom: #bebebe 1px solid">
+                <th>关键字</th>
+                <th>用户</th>
+                <th>时间</th>
+            </tr> 
+                {% for item in record %}
+            <tr style="border-bottom: #bebebe 1px solid">
+                <td align="center"  valign="top">{{ item.content }}</td>
+                <td align="center"  valign="top">{{ item.user }}</td>
+                 <td align="center"  valign="top">{{ item.date }}</td>
+            </tr>
+                {% endfor %}
+    </table>
+</div>
+</div>

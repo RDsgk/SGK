@@ -1,0 +1,216 @@
+
+<!-- saved from url=(0025)http://dotamax.com/login/ -->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script src="../static/brandnewform/js/hm.js"></script>
+  <script async="" src="../static/brandnewform/js/analytics.js"></script>
+  <script src="../static/brandnewform/js/particles.min.js"></script>
+  <script>
+    function DoNav(theUrl) {
+        document.location.href = theUrl;
+    }
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] ||
+            function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+        a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-47132172-1', 'dotamax.com');
+    ga('send', 'pageview');
+    </script>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?575895fe09d48554a608faa5ef059555";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+	<link rel="stylesheet" href="../static/brandnewform/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../static/brandnewform/css/mainpage.css">
+  <link rel="stylesheet" href="../static/brandnewform/css/sgkstyle.css">
+  
+  <link type="text/css" href="../static/newtable/css/BarChart.css" rel="stylesheet" />
+  <link type="text/css" href="../static/newtable/css/RGraph.css" rel="stylesheet" />
+
+
+  <script language="javascript" type="text/javascript" src="../static/newtable/js/jit.js"></script>
+
+  <script language="javascript" type="text/javascript" src="../static/newtable/js/sgkTotalinformation.js"></script>
+  <script language="javascript" type="text/javascript" src="../static/newtable/js/sgkTotalInfo2.js"></script>
+
+</head>
+
+
+<body id="particles-js" onload="init();">
+
+<script type="text/javascript">
+particlesJS('particles-js',
+  {
+    "particles": {
+      "number": {
+        "value": 110,
+        "density": {
+          "enable": true,
+          "value_area": 800
+        }
+      },
+      "color": {
+        "value": "#ffffff"
+      },
+      "shape": {
+        "type": "circle",
+        "stroke": {
+          "width": 0,
+          "color": "#000000"
+        },
+        "polygon": {
+          "nb_sides": 5
+        },
+        "image": {
+          "src": "img/github.svg",
+          "width": 100,
+          "height": 100
+        }
+      },
+      "opacity": {
+        "value": 0.5,
+        "random": false,
+        "anim": {
+          "enable": false,
+          "speed": 1,
+          "opacity_min": 0.1,
+          "sync": false
+        }
+      },
+      "size": {
+        "value": 1,
+        "random": true,
+        "anim": {
+          "enable": false,
+          "speed": 20,
+          "size_min": 0.1,
+          "sync": false
+        }
+      },
+      "line_linked": {
+        "enable": true,
+        "distance": 40,
+        "color": "#fff",
+        "opacity": 1,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 3,
+        "direction": "none",
+        "random": false,
+        "straight": false,
+        "out_mode": "out",
+        "attract": {
+          "enable": false,
+          "rotateX": 600,
+          "rotateY": 1200
+        }
+      }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": {
+          "enable": true,
+          "mode": "grab"
+        },
+        "onclick": {
+          "enable": true,
+          "mode": "push"
+        },
+        "resize": true
+      },
+      "modes": {
+        "grab": {
+          "distance": 120,
+          "line_linked": {
+            "opacity": 1
+          }
+        },
+        "bubble": {
+          "distance": 400,
+          "size": 40,
+          "duration": 2,
+          "opacity": 8,
+          "speed": 3
+        },
+        "repulse": {
+          "distance": 300
+        },
+        "push": {
+          "particles_nb": 4
+        },
+        "remove": {
+          "particles_nb": 2
+        }
+      }
+    },
+    "retina_detect": true,
+    "config_demo": {
+      "hide_card": false,
+      "background_color": "#b61924",
+      "background_image": "",
+      "background_position": "50% 50%",
+      "background_repeat": "no-repeat",
+      "background_size": "cover"
+    }
+  }
+);
+</script>
+    <div id="nav-bar">
+        <div class="nav-head">
+           <a href="#"><div class="nav-title"><h1>OneScorpion SGK</h1></div></a>
+        </div>
+          <ul>
+              <li><a href="http://10.10.20.26:8005"> 首页  | </a></li>
+              <li><a href="/statistic"> 统计信息  | </a></li>
+              <li><a href="/date_info"> 数据总体信息  | </a></li>
+              <li><a href="http://10.10.20.26:9200/_plugin/bigdesk"> 集群状态  | </a></li>
+              <li><a href="http://10.10.20.26:5601"> kibana</a></li>
+              <li style="color:blue"><a href="/logout/">|**注销**</a></li>
+          </ul>
+    </div>
+  
+  <div id="maindiv">
+      <div id="maindivSubBox">
+        
+        <div class="maindivInsert"><div class="sgk">SGK</div></div>
+        {% include tplfile %}
+        </div>
+    </div>
+
+    <div id="totalInfoDiv">
+      <div id="totalInfoSubBox">
+        <div class="sgk"><div style="font-size:1em;line-height:200%">数据规模:112.1GB<br / >总记录条数:863909357</div></div>
+        
+    </div>
+
+
+    
+    <div style="position: fixed;bottom:20px;width: 100%;">
+        <div class="footbar" style="padding-bottom:10px;text-align: center;">
+          
+            <img src="../static/brandnewform/img/logo_01.png" style="width:40px;margin: 0 auto;" class="max_logo breath">
+                
+                <div style="position: absolute;right:0px;bottom:10px;">
+                
+                    
+                    </div>
+          </div>
+      </div>
+</body>
+</html>

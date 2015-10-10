@@ -1,0 +1,26 @@
+<script src="/static/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+    //table different colors
+    console.log('tttt')
+    update_method()
+    update_ip()
+    update_status()
+    update_api()
+    update_visit()
+    var colors = ['#D9D3D4', '#ffffff'];
+    $("table").find("tr").each(function(i){
+        $(this).css("background-color", colors[i % 2]);
+    });
+});
+</script>    
+<div  id="breadcrumb"  class="clearfix"> <a  href="/">SGK</a><a  href="/"><span  class="last"><a href="#">社工库统计信息</a></span> </div>
+
+<p>TOP100密码</p>
+<iframe src="http://10.10.20.26:5601/#/visualize/edit/Top100Password?embed&_g=()&_a=(filters:!(),linked:!t,query:(query_string:(query:'*')),vis:(aggs:!((id:'1',params:(),schema:metric,type:count),(id:'2',params:(field:password,order:desc,orderBy:'1',size:100),schema:segment,type:terms)),listeners:(),params:(addLegend:!t,addTimeMarker:!f,addTooltip:!t,defaultYExtents:!f,interpolate:linear,mode:stacked,scale:linear,setYExtents:!f,shareYAxis:!t,smoothLines:!f,times:!(),yAxis:()),type:area))" style="width:80%;height:400px;margin:10px auto 30px auto;"></iframe>
+<p>TOP50邮箱</p>
+<iframe src="http://10.10.20.26:5601/#/visualize/edit/Top50EmailAddress?embed&_g=()&_a=(filters:!(),linked:!t,query:(query_string:(query:'*')),vis:(aggs:!((id:'1',params:(),schema:metric,type:count),(id:'2',params:(field:email,order:desc,orderBy:'1',size:50),schema:segment,type:terms)),listeners:(),params:(addLegend:!t,addTimeMarker:!f,addTooltip:!t,defaultYExtents:!f,mode:stacked,scale:linear,setYExtents:!f,shareYAxis:!t,times:!(),yAxis:()),type:histogram))" style="width:80%;height:400px;margin:10px auto 30px auto;"></iframe>
+<p>TOP10邮箱</p>
+<iframe src="http://10.10.20.26:5601/#/visualize/edit/Top10EmailAddress?embed&_g=()&_a=(filters:!(),linked:!t,query:(query_string:(query:'*')),vis:(aggs:!((id:'1',params:(),schema:metric,type:count),(id:'2',params:(field:email,order:desc,orderBy:'1',row:!t,size:10),schema:split,type:terms)),listeners:(),params:(addLegend:!t,addTooltip:!t,isDonut:!f,shareYAxis:!t),type:pie))" style="width:80%;height:400px;margin:10px auto 30px auto;"></iframe>
+
