@@ -14,13 +14,18 @@
 
                       {% for item in list %}
                       <tr  class="odd" style="border-bottom:1px solid#cccccc">
+                        {% if item.username != None %}
                         <td align="center"  valign="top" style="height:25px;border-bottom:1px solid#bebebe">{{ item.username }}</td>
+                        {% else %}
+                        <td align="center"  valign="top" style="height:25px;border-bottom:1px solid#bebebe">{{ item.id }}</td>
+                        {% endif %}
                         <td align="center"  valign="top" style="height:25px;border-bottom:1px solid#bebebe">{{ item.email }}</td>
                         {% if item.password != None %}
-
                         <td align="center"  valign="top" style="height:25px;border-bottom:1px solid#bebebe">{{ item.password }}</td>
-                        {% else %}
+                        {% elif item.passwordplaintext != None %}
                         <td align="center"  valign="top" style="height:25px;border-bottom:1px solid#bebebe">{{ item.passwordplaintext }}</td>
+                        {% else  %}
+                        <td align="center"  valign="top" style="height:25px;border-bottom:1px solid#bebebe">{{ item.passwordhash }}</td>
                         {% endif %}
 		     {%endfor%}
                       </tr>

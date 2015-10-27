@@ -1,0 +1,34 @@
+<style type="text/css">
+iframe {
+    width:100%;
+    height:1500px;
+    border: 0px;
+    margin:10px auto 30px auto;
+    overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+width: 10px;
+height: 10px;
+display: none; 
+}
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment  {
+height: 30px;
+background-color: transparent;
+}
+::-webkit-scrollbar-track-piece  {
+background-color: #3b3b3b;
+-webkit-border-radius: 16px;
+}
+::-webkit-scrollbar-thumb:vertical {
+height: 50px;
+background-color: #666;
+border: 1px solid #eee;
+-webkit-border-radius: 6px;
+}
+</style>
+
+<div id="marvel-clusterstate">
+    <iframe src="http://10.10.20.26:5601/#/discover?_g=()&_a=(columns:!(_source),index:'collection*',interval:auto,query:(query_string:(analyze_wildcard:!t,query:'*')),sort:!(_score,desc))" scrolling="yes"></iframe>
+</div>

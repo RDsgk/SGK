@@ -25,18 +25,25 @@
 }
 .selectbox {
     background: #43413e;
+    font-family: sans-serif,serif,'Open Sans', sans serif;
     color:gray;
     border: 0;
-    height: 3.5em;
-    width:5em;
+    height: 4em;
+    width:6em;
+    vertical-align: middle;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+
 }
 #headerwrap input[type=submit] {
-    font-family: 'Patua One', cursive;
+    font-family: sans-serif,serif,'Open Sans', sans serif;
     color: #fff;
     width: 185px;
-    height: 3em;
+    height: 3.5em;
     font-size: 1.3125em; /* 21px */
     padding:0.5em;
+    vertical-align: middle;
     letter-spacing: 0.05em;
     margin: 0;
     border: 0;
@@ -62,6 +69,34 @@
     margin:auto;
     overflow:hidden;
 }
+iframe {
+    border:0px;
+    width:100%;
+    height:600px;
+    margin:10px auto 30px auto;
+    overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+width: 10px;
+height: 10px;
+display: none; 
+}
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment  {
+height: 30px;
+background-color: transparent;
+}
+::-webkit-scrollbar-track-piece  {
+background-color: #3b3b3b;
+-webkit-border-radius: 16px;
+}
+::-webkit-scrollbar-thumb:vertical {
+height: 50px;
+background-color: #666;
+border: 1px solid #eee;
+-webkit-border-radius: 6px;
+}
 </style>
 <!--
 <div id="search">
@@ -75,9 +110,9 @@
 <div id="headerwrap">
       <header class="clearfix">
             <form id='search' method="post" action="/search_done" style="margin-top:5%">  
-            <input type="text" name="search_content" placeholder="username,password,email..." class="cform-text" size="40" title="关键字"> 
+            <input type="text" name="search_content" placeholder="用户名，邮箱，密码..." class="cform-text" size="40" title="关键字"> 
             <select class="selectbox" id="way" name="way" form='search'>
-            <option value="none">user</option>
+            <option value="none">用户名</option>
             <option value="passwd">密码</option>
             <option value="email">邮箱</option>
             </select>    
@@ -86,12 +121,19 @@
       </header>
 </div>
 
-<div id="center-container">
-    <div id="infovis"></div>    
+<div id="marvel-overview">
+    <iframe src="http://10.10.20.26:9200/_plugin/marvel/kibana/index.html#/dashboard/elasticsearch/marvel.overview.json" scrolling="yes"></iframe>
 </div>
 
+
+<div id="center-container">
+    <h2>总体数据统计</h2>
+    <div id="infovis"></div>  
+</div>
+
+
 <div style="border-top:1px solid #CDC5BF;border-bottom:1px solid #CDC5BF;margin:20px auto 50px auto;width:80%">
-    <h2 style="margin-top:10px;text-align:left">搜索历史</h2>
+    <h2 style="margin-top:10px;text-align:left">搜索历史(Today)</h2>
 <div style="margin-left:200px;margin-top:20px;margin-bottom:20px;width=80%;color:#F0F0F0;font-family:Arial,Cursive">
   
     <table style="width:70%">

@@ -18,7 +18,7 @@ from datetime import *
 def mainpage(request):
     user_list=User.objects.all()
     a=datetime.now()
-    b=search_count.objects.filter(date=a).order_by('-id')[:10] 
+    b=search_count.objects.filter(date=a).order_by('-id')[:20] 
     #判断用户登陆状态
     if request.user in user_list:
 	return render_to_response("newmainpage.html", {"tplfile":"newsearch.html", "username": request.user,"record":b})
@@ -38,7 +38,12 @@ def log(request):
     user = authenticate(username=user_name, password=password)
     user_list=User.objects.all()
     a=datetime.now()
-    b=search_count.objects.filter(date=a).order_by('-id')[:10]
+    b=search_count.objects.filter(date=a).order_by('-id')[:20]
+# 测试查询次数
+    querycount=search_count.objects.values('date').annotate(dcount=Count('date'))
+    print querycount
+
+
     if user is None:
 	if not request.user.is_active:
 	    return render_to_response('brandnewlogin.html', {})
@@ -61,7 +66,7 @@ def search(request):
     print querytype
     if querytype == 'username' or querytype == 'none':
    	 #基于用户名查询
-   	 searchResult = es.search(index='_all',body={"query":{"term":{'username':text}},"size":50})
+   	 searchResult = es.search(index='_all',body={"query":{"term":{'username':text}},"highlight":{"fields":{"username":{}}},"size":100})
     elif querytype == 'email':
    	 #基于邮箱查询
    	 searchResult = es.search(index='_all',body={"query":{"term":{'email':text}},"size":50})
@@ -90,7 +95,7 @@ def search(request):
 	collection_list.append(t)
     #获取数据源
     for element in collection_list:
-	targetSource = es.search(index='collectionlist',body={"query":{"match":{'collectionName':element}}})
+	targetSource = es.search(index='collectionlist2',body={"query":{"match":{'collectionName':element}}})
 	deal1 = targetSource['hits']
 	deal2 = deal1['hits']
 	for j in range( len(deal2)):
@@ -107,10 +112,17 @@ def search(request):
     #返回查询结果和数据源信息
     return render_to_response("newmainpage.html",{"tplfile":"newsearchresult.html","username":request.user,"list":search_list,"source_list":source_list,"total":total,"took":took})
 
+#集群信息
+def cluster_state(request):
+	return render_to_response("newmainpage.html",{"tplfile":"newclusterstate.html","username":request.user})
+
+#kibana
+def kibana(request):
+	return render_to_response("newmainpage.html",{"tplfile":"newkibana.html","username":request.user})
+
 #统计信息
 @login_required
 def statistic(request):
-    #SGK内部数据信息
     '''
     a=search_count.objects.values('date').annotate(dcount=Count('date'))
     print "test"

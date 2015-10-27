@@ -26,6 +26,8 @@ urlpatterns = [
     url(r'^server_status$',views.server_status),
     url(r'^logout/$',views.log_out),
     url(r'^cccc/$',views.cccc),
+    url(r'^cluster_state$',views.cluster_state),
+    url(r'^kibana$',views.kibana),
 #    url(r'^testTemplate/$',views.template),
 #    url(r'^newform$',views.newform)
 ]
